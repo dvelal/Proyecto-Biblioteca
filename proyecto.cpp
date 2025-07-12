@@ -9,6 +9,7 @@ using namespace std;
 string amarillo = "\033[1;33m";
 string verde = "\033[0;32m";
 string rojo = "\033[0;31m";
+string azul = "\033[0;34m";
 string reset = "\033[0m";
 
 struct Cliente{
@@ -48,6 +49,7 @@ void devolverLibro(Libro[], int, string, string, int);
 void cargarLibrosPredefinidos(Libro[], int &);
 
 int main() {
+    srand(time(0));  
     Libro libros[1000];
     Cliente cliente[1000];
     int contadorLibros = 0;
@@ -207,8 +209,11 @@ void mostrarLibros(Libro libros[], int cantidad) {
              << setw(10) << libros[i].edicion
              << setw(10)  << libros[i].anio
              << setw(12) << libros[i].categoria
-             << setw(15) << libros[i].subcategoria 
-             << setw(15) << libros[i].estado << endl;
+             << setw(15) << libros[i].subcategoria;
+        if (libros[i].estado == "disponible")
+            cout << setw(15) << azul << libros[i].estado << reset << endl;
+        else
+            cout << setw(15) << rojo << libros[i].estado << reset << endl;
     }
 }
 
@@ -247,7 +252,7 @@ void imprimelibro(Libro &l){
     cout << "Autor: " << l.autor << endl;
     cout << "Edicion: " << l.edicion << endl;
     cout << "Anio: " << l.anio << endl;
-    cout << "Estado: " << l.estado << endl;
+    cout << "Estado: " << azul << l.estado << reset << endl;
     cout << "Categoria: " << l.categoria << endl;
     cout << "Subcategoria: " << l.subcategoria << endl; 
 }
