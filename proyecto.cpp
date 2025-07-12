@@ -342,6 +342,60 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Teoria y Practica de Algebra", "Jose Rojas", 2, 2018, "Matematica", "Algebra"};
     libros[contador++] = {"Algebra Basica para pre", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
 
+    //Matematica - Algebra Lineal
+    libros[contador++] = {"Algebra Lineal con Aplicaciones", "David C. Lay", 5, 2016, "Matematica", "Algebra Lineal"};
+    libros[contador++] = {"Introduccion al Algebra Lineal", "Gilbert Strang", 4, 2009, "Matematica", "Algebra Lineal"};
+    libros[contador++] = {"Algebra Lineal", "Kenneth Hoffman", 2, 1971, "Matematica", "Algebra Lineal"};
+    libros[contador++] = {"Algebra Lineal y Geometria", "Manuel Palacios", 1, 2018, "Matematica", "Algebra Lineal"};
+    libros[contador++] = {"Fundamentos de Algebra Lineal", "Ron Larson", 7, 2013, "Matematica", "Algebra Lineal"};
+    libros[contador++] = {"Algebra Lineal Elemental", "Howard Anton", 11, 2013, "Matematica", "Algebra Lineal"};
+    libros[contador++] = {"Un Curso de Algebra Lineal", "David S. Dummit", 3, 2004, "Matematica", "Algebra Lineal"};
+
+    //Matematica - Ecuaciones Diferenciales
+    libros[contador++] = {"Ecuaciones Diferenciales con Aplicaciones de Modelado", "Dennis G. Zill", 11, 2018, "Matematica", "Ecuaciones Diferenciales"};
+    libros[contador++] = {"Ecuaciones Diferenciales Elementales y Problemas de Valores en la Frontera", "William E. Boyce", 11, 2017, "Matematica", "Ecuaciones Diferenciales"};
+    libros[contador++] = {"Curso de Ecuaciones Diferenciales", "Richard C. DiPrima", 7, 2012, "Matematica", "Ecuaciones Diferenciales"};
+    libros[contador++] = {"Introduccion a las Ecuaciones Diferenciales", "Serge Lang", 1, 1990, "Matematica", "Ecuaciones Diferenciales"};
+    libros[contador++] = {"Ecuaciones Diferenciales Aplicadas", "Murray R. Spiegel", 3, 2004, "Matematica", "Ecuaciones Diferenciales"};
+    libros[contador++] = {"Metodos Matematicos para Ingenieros y Cientificos", "George B. Arfken", 7, 2012, "Matematica", "Ecuaciones Diferenciales"};
+    libros[contador++] = {"Ecuaciones Diferenciales Parciales", "L.C. Evans", 2, 2010, "Matematica", "Ecuaciones Diferenciales"};
+
+    //Matematica - Estadistica
+    libros[contador++] = {"Estadistica Matematica con Aplicaciones", "John E. Freund", 8, 2010, "Matematica", "Estadistica"};
+    libros[contador++] = {"Probabilidad y Estadistica para Ingenieria y Ciencias", "Ronald E. Walpole", 9, 2012, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica para Administracion y Economia", "Richard I. Levin", 7, 1999, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica Descriptiva e Inferencial", "Mario F. Triola", 13, 2018, "Matematica", "Estadistica"};
+    libros[contador++] = {"Introduccion a la Estadistica", "Sheldon M. Ross", 3, 2010, "Matematica", "Estadistica"};
+    libros[contador++] = {"Principios de Estadistica", "W.C. Scheaffer", 3, 2009, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica Aplicada a los Negocios y la Economia", "Douglas A. Lind", 17, 2019, "Matematica", "Estadistica"};
+
+    //Matematica - Geometria Diferencial
+    libros[contador++] = {"Geometria Diferencial de Curvas y Superficies", "Manfredo P. do Carmo", 2, 2016, "Matematica", "Geometria Diferencial"};
+    libros[contador++] = {"Introduccion a la Geometria Diferencial", "Andrew Pressley", 2, 2010, "Matematica", "Geometria Diferencial"};
+    libros[contador++] = {"Geometria Diferencial", "Michael Spivak", 3, 1999, "Matematica", "Geometria Diferencial"};
+    libros[contador++] = {"Notas de Geometria Diferencial", "Oscar Garcia-Prada", 1, 2005, "Matematica", "Geometria Diferencial"};
+    libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria Diferencial"};
+    libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria Diferencial"};
+    libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria Diferencial"};
+
+    //Matematica - Teoria de Numeros
+    libros[contador++] = {"Introduccion a la Teoria de Numeros", "David M. Burton", 7, 2012, "Matematica", "Teoria de Numeros"};
+    libros[contador++] = {"Teoria de Numeros", "G.H. Hardy", 6, 2008, "Matematica", "Teoria de Numeros"};
+    libros[contador++] = {"Una Introduccion a la Teoria de Numeros", "Ivan Niven", 5, 1991, "Matematica", "Teoria de Numeros"};
+    libros[contador++] = {"Problemas de Teoria de Numeros", "D. M. Burton", 1, 2006, "Matematica", "Teoria de Numeros"};
+    libros[contador++] = {"Fundamentos de Teoria de Numeros", "William J. LeVeque", 1, 1977, "Matematica", "Teoria de Numeros"};
+    libros[contador++] = {"Teoria de Numeros Elementales", "Joseph H. Silverman", 1, 2018, "Matematica", "Teoria de Numeros"};
+    libros[contador++] = {"Teoria de Numeros para Principiantes", "Kim S. Kwong", 1, 2019, "Matematica", "Teoria de Numeros"};
+
+    //Matematica - Topologia
+    libros[contador++] = {"Topologia", "James R. Munkres", 2, 2000, "Matematica", "Topologia"};
+    libros[contador++] = {"Elementos de Topologia General", "S. W. Davis", 1, 2005, "Matematica", "Topologia"};
+    libros[contador++] = {"Topologia General", "Stephen Willard", 1, 2004, "Matematica", "Topologia"};
+    libros[contador++] = {"Una Introduccion a la Topologia", "Bert Mendelson", 3, 1990, "Matematica", "Topologia"};
+    libros[contador++] = {"Topologia en Contexto", "Paul L. Shick", 1, 2007, "Matematica", "Topologia"};
+    libros[contador++] = {"Conceptos Basicos de Topologia", "Mark A. Armstrong", 1, 1983, "Matematica", "Topologia"};
+    libros[contador++] = {"Topologia y Geometria", "Glen E. Bredon", 1, 1993, "Matematica", "Topologia"};
+    
     //Ciencias - Fisica
     libros[contador++] = {"Fisica Universitaria", "Sears", 13, 2021, "Ciencias", "Fisica"};
     libros[contador++] = {"Fisica I", "Luis Antonio Arana", 2, 2019, "Ciencias", "Fisica"};
@@ -359,7 +413,7 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Quimica para Ingenieria", "Carlos Zavala", 1, 2016, "Ciencias", "Quimica"};
     libros[contador++] = {"Fundamentos de Quimica", "Manuel Ventura", 1, 2017, "Ciencias", "Quimica"};
     libros[contador++] = {"Ejercicios de Quimica Basica", "Jose Cardenas", 1, 2021, "Ciencias", "Quimica"};
-
+    
     //Literatura - Peruana
     libros[contador++] = {"Los rios profundos", "Jose Arguedas", 1, 1958, "Literatura", "Peruana"};
     libros[contador++] = {"Los rios profundos", "Jose Maria Arguedas", 1, 1958, "Literatura", "Peruana"};
