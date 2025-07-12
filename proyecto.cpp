@@ -7,6 +7,7 @@ struct Libro {
     string autor;
     int edicion;
     int anio;
+    string estado = "disponible"; 
 };
 
 void buscarLibro(Libro[], int, string, string);
@@ -14,6 +15,10 @@ void buscarLibro(Libro[], int, string, string);
 void leerLibro(Libro &, string, string, int, int);
 
 void imprimelibro(Libro &);
+
+void prestarLibro(Libro [], int, string, string);
+
+void devolverLibro(Libro [], int, string, string);
 
 int main() {
     Libro libros[1000];
@@ -28,6 +33,8 @@ int main() {
         cout << "1. Buscar libro\n";
         cout << "2. Agregar un libro\n";
         cout << "3. Mostrar libros\n";
+        cout << "4. Prestar un libro\n";
+        cout << "5. Devolver un libro\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> op;
@@ -76,6 +83,24 @@ int main() {
                 break;
             }
 
+            case 4: {
+                cout << "Titulo del libro a prestar: ";
+                getline(cin, titulo);
+                cout << "Autor: ";
+                getline(cin, autor);
+                prestarLibro(libros, contadorLibros, titulo, autor);
+                system("pause");
+                break;
+            }
+            case 5: {
+                cout << "Titulo del libro a devolver: ";
+                getline(cin, titulo);
+                cout << "Autor: ";
+                getline(cin, autor);
+                devolverLibro(libros, contadorLibros, titulo, autor);
+                system("pause");
+                break;
+            }
             case 0:
                 cout << "¿Seguro que desea salir (S/N)? ";
                 cin >> op1;
@@ -117,6 +142,7 @@ void imprimelibro(Libro &l){
     cout << "Autor: " << l.autor << endl;
     cout << "Edicion: " << l.edicion << endl;
     cout << "Anio: " << l.anio << endl;
+    cout << "Estado: " << l.estado << endl;
 }
 
 void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio) {
@@ -124,4 +150,34 @@ void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio) {
     l.autor = autor;
     l.edicion = edicion;
     l.anio = anio;
+}
+
+void prestarLibro(Libro libros[], int cant, string titulo, string autor) {
+    for (int i = 0; i < cant; i++) {
+        if (libros[i].titulo == titulo && libros[i].autor == autor) {
+            if (libros[i].estado == "prestado") {
+                cout << "Este libro ya está prestado.\n";
+            } else {
+                libros[i].estado = "prestado";
+                cout << "Libro prestado con éxito.\n";
+            }
+            return;
+        }
+    }
+    cout << "Libro no encontrado.\n";
+}
+
+void devolverLibro(Libro libros[], int cant, string titulo, string autor) {
+    for (int i = 0; i < cant; i++) {
+        if (libros[i].titulo == titulo && libros[i].autor == autor) {
+            if (libros[i].estado == "disponible") {
+                cout << "Ese libro ya está disponible.\n";
+            } else {
+                libros[i].estado = "disponible";
+                cout << "Libro devuelto con éxito.\n";
+            }
+            return;
+        }
+    }
+    cout << "Libro no encontrado.\n";
 }
