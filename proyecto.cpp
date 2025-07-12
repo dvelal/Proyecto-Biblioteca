@@ -2,6 +2,7 @@
 #include <string>
 #include <ctime> 
 #include <windows.h>
+#include "utilidades.h"
 using namespace std;
 
 string amarillo = "\033[1;33m";
@@ -62,8 +63,8 @@ int main() {
         cout << "Seleccione una opcion: ";
         cin >> op;
         cin.ignore(); 
-        system("pause");
-        system("cls");
+        
+        limpiarPantalla();
 
         switch (op) {
             case 1: {
@@ -72,7 +73,7 @@ int main() {
                 cout << "Ingrese el autor del libro a buscar: ";
                 getline(cin, autor);
                 buscarLibro(libros, contadorLibros, titulo, autor);
-                system("pause");
+                pausar();
                 break;
             }
 
@@ -91,7 +92,7 @@ int main() {
                 leerLibro(libros[contadorLibros], titulo, autor, edicion, anio);
                 contadorLibros++;
                 cout << verde << "Libro agregado con exito.\n" << reset;
-                system("pause");
+                pausar();
                 break;
             }
 
@@ -102,7 +103,7 @@ int main() {
                     imprimelibro(libros[i]);
                     cout << endl;
                 }
-                system("pause");
+                pausar();
                 break;
             }
 
@@ -124,7 +125,7 @@ int main() {
                 leercliente(cliente[contadorcliente], nombre, edad, dni);
                 contadorcliente++;
                 prestarLibro(libros, contadorLibros, titulo, autor, dni);
-                system("pause");
+                pausar();
                 break;
             }
             case 5: {
@@ -138,7 +139,7 @@ int main() {
                 cin >> dni;
                 cin.ignore();
                 devolverLibro(libros, contadorLibros, titulo, autor, dni);
-                system("pause");
+                pausar();
                 break;
             }
             case 0:
@@ -156,9 +157,9 @@ int main() {
 
             default:
                 cout << rojo << "Opcion invalida." << reset << endl;
-                system("pause");
+                pausar();
         }
-        system("cls");
+        limpiarPantalla();
     } while (op != 0);
 
     return 0;
