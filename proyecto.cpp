@@ -342,6 +342,7 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Teoria y Practica de Algebra", "Jose Rojas", 2, 2018, "Matematica", "Algebra"};
     libros[contador++] = {"Algebra Basica para pre", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
 
+
     //Ciencias - Fisica
     libros[contador++] = {"Fisica Universitaria", "Sears", 13, 2021, "Ciencias", "Fisica"};
     libros[contador++] = {"Fisica I", "Luis Antonio Arana", 2, 2019, "Ciencias", "Fisica"};
