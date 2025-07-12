@@ -28,9 +28,9 @@ struct Libro {
     int codigo_seguridad = 0;
 };
 
-void buscarLibro(Libro[], int, string, string);
+void buscarLibro(Libro[], int, int, string, string, string, string);
 
-void leerLibro(Libro &, string, string, int, int);
+void leerLibro(Libro &, string, string, int, int, string, string);
 
 void leercliente(Cliente &, string, int, int);
 
@@ -47,9 +47,9 @@ int main() {
     Cliente cliente[1000];
     int contadorLibros = 0;
     int contadorcliente = 0;
-    int op, dni, edad;
+    int op, dni, edad, subop;
     char op1;
-    string titulo, autor, nombre;
+    string titulo, autor, nombre, cate, subcate;
     int edicion, anio;
 
     do {
@@ -68,12 +68,27 @@ int main() {
 
         switch (op) {
             case 1: {
+                cout << "\n1. Buscar por titulo y autor\n";
+                cout << "2. Buscar por categoria y subcategoria\n";
+                cout << "Seleccione una opcion: ";
+                cin >> subop;
+                cin.ignore();
+                if (subop == 1){
                 cout << "Ingrese el titulo del libro a buscar: ";
                 getline(cin, titulo);  
                 cout << "Ingrese el autor del libro a buscar: ";
                 getline(cin, autor);
-                buscarLibro(libros, contadorLibros, titulo, autor);
+                buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
                 pausar();
+                }
+                else if (subop == 2){
+                cout << "\nSeleccione una Categoria: ";
+                getline(cin, cate);
+                cout << "\nSeleccione una Subcategoria: ";
+                getline(cin, subcate);
+                buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor); 
+                pausar();   
+                }
                 break;
             }
 
@@ -88,8 +103,13 @@ int main() {
                 cout << "Anio: ";
                 cin >> anio;
                 cin.ignore();
+                cout << "Categoria: ";
+                cin >> cate;
+                cin.ignore();
+                cout << "Subcategoria: ";
+                cin >> subcate;
 
-                leerLibro(libros[contadorLibros], titulo, autor, edicion, anio);
+                leerLibro(libros[contadorLibros], titulo, autor, edicion, anio, cate, subcate);
                 contadorLibros++;
                 cout << verde << "Libro agregado con exito.\n" << reset;
                 pausar();
@@ -165,17 +185,33 @@ int main() {
     return 0;
 }
 
-void buscarLibro(Libro libros[], int cant, string titulo, string autor) {
-    int encontra = 0;
-    for (int i = 0; i < cant; i++){
-        if (libros[i].titulo == titulo && libros[i].autor == autor){
-            cout << verde << "\nLibro encontrado:\n" << reset;
-            imprimelibro(libros[i]);
-            encontra=i+1;
+void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string subcategoria, string titulo, string autor) {
+    bool encontra = false;
+    if (elegir == 1){
+        for (int i = 0; i < cant; i++){
+            if (libros[i].titulo == titulo && libros[i].autor == autor){
+                cout << verde << "\nLibro encontrado:\n" << reset;
+                imprimelibro(libros[i]);
+                encontra=true;
+            }
+        }
+        if (!encontra){
+            cout << rojo << "No existe el libro" << reset << endl;
         }
     }
-    if (encontra == 0){
-        cout << rojo << "No existe el libro" << reset << endl;
+
+    if (elegir == 2){
+        cout << "\nLibros encontrados:\n";
+        for (int i = 0; i < cant; i++) {
+            if (libros[i].categoria == categoria && libros[i].subcategoria == subcategoria) {
+                imprimelibro(libros[i]);
+                cout << endl;
+                encontra = true;
+            }
+        }
+        if (!encontra) {
+            cout << "No hay libros encontrados";
+        }
     }
 }
 
@@ -185,6 +221,8 @@ void imprimelibro(Libro &l){
     cout << "Edicion: " << l.edicion << endl;
     cout << "Anio: " << l.anio << endl;
     cout << "Estado: " << l.estado << endl;
+    cout << "Categoria: " << l.categoria << endl;
+    cout << "Subcategoria: " << l.subcategoria << endl; 
 }
 
 void imprimecliente(Cliente &c){
@@ -193,11 +231,13 @@ void imprimecliente(Cliente &c){
     cout << "DNI: " << c.dni << endl;
 }
 
-void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio) {
+void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio, string cate, string subcate) {
     l.titulo = titulo;
     l.autor = autor;
     l.edicion = edicion;
     l.anio = anio;
+    l.categoria = cate;
+    l.subcategoria = subcate;
 }
 
 void leercliente(Cliente &c, string nombre, int edad, int dni){
