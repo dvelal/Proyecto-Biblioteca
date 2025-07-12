@@ -2,6 +2,7 @@
 #include <string>
 #include <ctime> 
 #include <windows.h>
+#include <iomanip>
 #include "utilidades.h"
 using namespace std;
 
@@ -28,6 +29,8 @@ struct Libro {
     int codigo_seguridad = 0;
 };
 
+void mostrarLibros(Libro[], int);
+
 void buscarLibro(Libro[], int, int, string, string, string, string);
 
 void leerLibro(Libro &, string, string, int, int, string, string);
@@ -42,6 +45,8 @@ void prestarLibro(Libro[], int, string, string, int);
 
 void devolverLibro(Libro[], int, string, string, int);
 
+void cargarLibrosPredefinidos(Libro[], int &);
+
 int main() {
     Libro libros[1000];
     Cliente cliente[1000];
@@ -51,6 +56,8 @@ int main() {
     char op1;
     string titulo, autor, nombre, cate, subcate;
     int edicion, anio;
+
+    cargarLibrosPredefinidos(libros, contadorLibros);
 
     do {
         cout << "\n--- Biblioteca Virtual ---\n";
@@ -117,12 +124,7 @@ int main() {
             }
 
             case 3: {
-                cout << "\nLibros registrados:\n";
-                for (int i = 0; i < contadorLibros; i++) {
-                    cout<<"Libro #"<<i+1<<endl;
-                    imprimelibro(libros[i]);
-                    cout << endl;
-                }
+                mostrarLibros(libros, contadorLibros);
                 pausar();
                 break;
             }
@@ -183,6 +185,31 @@ int main() {
     } while (op != 0);
 
     return 0;
+}
+
+void mostrarLibros(Libro libros[], int cantidad) {
+    cout << "\nLista de libros registrados:\n";
+    cout << left
+         << setw(40) << "Titulo"
+         << setw(30) << "Autor"
+         << setw(10) << "Edicion"
+         << setw(10)  << "Anio"
+         << setw(12) << "Categoria"
+         << setw(15) << "Subcategoria" 
+         << setw(15) << "Estado" << endl;
+
+    cout << string(132, '-') << endl;
+
+    for (int i = 0; i < cantidad; i++) {
+        cout << left
+             << setw(40) << libros[i].titulo
+             << setw(30) << libros[i].autor
+             << setw(10) << libros[i].edicion
+             << setw(10)  << libros[i].anio
+             << setw(12) << libros[i].categoria
+             << setw(15) << libros[i].subcategoria 
+             << setw(15) << libros[i].estado << endl;
+    }
 }
 
 void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string subcategoria, string titulo, string autor) {
@@ -293,4 +320,53 @@ void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dn
         }
     }
     cout << rojo << "Libro no encontrado.\n" << reset;
+}
+
+void cargarLibrosPredefinidos(Libro libros[], int &contador) {
+
+    //Matematica - Calculo
+    libros[contador++] = {"Calculo", "James Stewart", 8, 2020, "Matematica", "Calculo"};
+    libros[contador++] = {"Calculo I", "Luis Antonio Arana", 2, 2019, "Matematica", "Calculo"};
+    libros[contador++] = {"Calculo Diferencial", "Julio Rios", 3, 2016, "Matematica", "Calculo"};
+    libros[contador++] = {"Matematica para Ingenieria", "Carlos Zavala", 1, 2015, "Matematica", "Calculo"};
+    libros[contador++] = {"Curso de Calculo", "Pedro Poma", 4, 2018, "Matematica", "Calculo"};
+    libros[contador++] = {"Introduccion al Calculo", "Manuel Ventura", 1, 2014, "Matematica", "Calculo"};
+    libros[contador++] = {"Fundamentos de Matematica", "Walter Apaza", 2, 2021, "Matematica", "Calculo"};
+
+    //Matematica - Algebra
+    libros[contador++] = {"Algebra Lineal", "David Lay", 5, 2016, "Matematica", "Algebra"};
+    libros[contador++] = {"Algebra I", "Luis Antonio Arana", 3, 2020, "Matematica", "Algebra"};
+    libros[contador++] = {"Problemas de Algebra", "Walter Apaza", 2, 2019, "Matematica", "Algebra"};
+    libros[contador++] = {"Algebra Elemental", "Cesar Delgado", 1, 2015, "Matematica", "Algebra"};
+    libros[contador++] = {"Curso de Algebra", "Pedro Poma", 4, 2017, "Matematica", "Algebra"};
+    libros[contador++] = {"Teoria y Practica de Algebra", "Jose Rojas", 2, 2018, "Matematica", "Algebra"};
+    libros[contador++] = {"Algebra Basica para pre", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
+
+    //Ciencias - Fisica
+    libros[contador++] = {"Fisica Universitaria", "Sears", 13, 2021, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fisica I", "Luis Antonio Arana", 2, 2019, "Ciencias", "Fisica"};
+    libros[contador++] = {"Problemas de Fisica", "Walter Apaza", 3, 2020, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fisica General", "Julio Silva", 2, 2017, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fisica para Ingenieria", "Carlos Zavala", 1, 2016, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fundamentos de Fisica", "Manuel Ventura", 1, 2015, "Ciencias", "Fisica"};
+    libros[contador++] = {"Ejercicios de Fisica Universitaria", "Jose Cardenas", 1, 2021, "Ciencias", "Fisica"};
+
+    //Ciencias - Quimica
+    libros[contador++] = {"Quimica General", "Zumdahl", 7, 2012, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica I", "Luis Antonio Arana", 2, 2018, "Ciencias", "Quimica"};
+    libros[contador++] = {"Problemas de Quimica", "Walter Apaza", 3, 2019, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica General", "Julio Silva", 2, 2015, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica para Ingenieria", "Carlos Zavala", 1, 2016, "Ciencias", "Quimica"};
+    libros[contador++] = {"Fundamentos de Quimica", "Manuel Ventura", 1, 2017, "Ciencias", "Quimica"};
+    libros[contador++] = {"Ejercicios de Quimica Basica", "Jose Cardenas", 1, 2021, "Ciencias", "Quimica"};
+
+    //Literatura - Peruana
+    libros[contador++] = {"Los rios profundos", "Jose Arguedas", 1, 1958, "Literatura", "Peruana"};
+    libros[contador++] = {"Los rios profundos", "Jose Maria Arguedas", 1, 1958, "Literatura", "Peruana"};
+    libros[contador++] = {"El zorro de arriba y el zorro de abajo", "Jose Maria Arguedas", 1, 1971, "Literatura", "Peruana"};
+    libros[contador++] = {"La ciudad y los perros", "Mario Vargas Llosa", 1, 1963, "Literatura", "Peruana"};
+    libros[contador++] = {"Conversacion en La Catedral", "Mario Vargas Llosa", 1, 1969, "Literatura", "Peruana"};
+    libros[contador++] = {"Aves sin nido", "Clorinda Matto de Turner", 1, 1889, "Literatura", "Peruana"};
+    libros[contador++] = {"El tungsteno", "Cesar Vallejo", 1, 1931, "Literatura", "Peruana"};
+
 }
