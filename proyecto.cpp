@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "utilidades.h"
 using namespace std;
 
 struct Libro {
@@ -18,7 +19,7 @@ void imprimelibro(Libro &);
 int main() {
     Libro libros[1000];
     int contadorLibros = 0;
-    int op;
+    int opcion;
     char op1;
     string titulo, autor;
     int edicion, anio;
@@ -27,22 +28,25 @@ int main() {
         cout << "\n--- Biblioteca Virtual ---\n";
         cout << "1. Buscar libro\n";
         cout << "2. Agregar un libro\n";
-        cout << "3. Mostrar libros\n";
+        cout << "3. Alquilar libro\n";
+        cout << "4. Mostrar libros\n";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
-        cin >> op;
+        cin >> opcion;
         cin.ignore(); 
-        system("pause");
-        system("cls");
 
-        switch (op) {
+        limpiarPantalla();
+
+        switch (opcion) {
             case 1: {
                 cout << "Ingrese el titulo del libro a buscar: ";
                 getline(cin, titulo);  
                 cout << "Ingrese el autor del libro a buscar: ";
                 getline(cin, autor);
                 buscarLibro(libros, contadorLibros, titulo, autor);
-                system("pause");
+                
+                pausar();
+
                 break;
             }
 
@@ -64,15 +68,18 @@ int main() {
                 system("pause");
                 break;
             }
-
             case 3: {
+                //falta
+            }
+            case 4: {
                 cout << "\nLibros registrados:\n";
                 for (int i = 0; i < contadorLibros; i++) {
                     cout<<"Libro #"<<i+1<<endl;
                     imprimelibro(libros[i]);
                     cout << endl;
                 }
-                system("pause");
+
+                pausar();
                 break;
             }
 
@@ -84,7 +91,7 @@ int main() {
                     cout << "Saliendo del programa...\n";
                     break;
                     case 'N':
-                    op++;
+                    opcion++;
                     break;       
                 }
                 break;
@@ -92,8 +99,8 @@ int main() {
             default:
                 cout << "Opcion invalida.\n";
         }
-        system("cls");
-    } while (op != 0);
+        limpiarPantalla();
+    } while (opcion != 0);
 
     return 0;
 }
