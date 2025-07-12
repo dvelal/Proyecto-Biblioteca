@@ -1,6 +1,13 @@
 #include <iostream>
 #include <string>
+#include <random>
 using namespace std;
+
+struct Cliente{
+    string nombre;
+    int edad;
+    int dni;
+};
 
 struct Libro {
     string titulo;
@@ -8,24 +15,31 @@ struct Libro {
     int edicion;
     int anio;
     string estado = "disponible"; 
+    int dni_cliente; 
 };
 
 void buscarLibro(Libro[], int, string, string);
 
 void leerLibro(Libro &, string, string, int, int);
 
+void leercliente(Cliente &, string, int, int);
+
+void imprimecliente(Cliente &);
+
 void imprimelibro(Libro &);
 
-void prestarLibro(Libro [], int, string, string);
+void prestarLibro(Libro[], int, string, string, int);
 
-void devolverLibro(Libro [], int, string, string);
+void devolverLibro(Libro[], int, string, string, int);
 
 int main() {
     Libro libros[1000];
+    Cliente cliente[1000];
     int contadorLibros = 0;
-    int op;
+    int contadorcliente = 0;
+    int op, dni, edad;
     char op1;
-    string titulo, autor;
+    string titulo, autor, nombre;
     int edicion, anio;
 
     do {
@@ -84,20 +98,37 @@ int main() {
             }
 
             case 4: {
+                cout << "-------------------------------------Ingresa los datos del libro----------------------------------------------" << endl;
                 cout << "Titulo del libro a prestar: ";
                 getline(cin, titulo);
                 cout << "Autor: ";
                 getline(cin, autor);
-                prestarLibro(libros, contadorLibros, titulo, autor);
+                cout << "----------------------------------------Ingresa tus datos personales----------------------------------------- " << endl;
+                cout << "Ingresa tu nombre (Primer nombre y apellido): ";
+                getline(cin, nombre);
+                cout << "Ingresa tu edad: ";
+                cin >> edad;
+                cin.ignore();
+                cout << "Ingresa tu DNI: ";
+                cin >> dni;
+                cin.ignore();
+                leercliente(cliente[contadorcliente], nombre, edad, dni);
+                contadorcliente++;
+                prestarLibro(libros, contadorLibros, titulo, autor, dni);
                 system("pause");
                 break;
             }
             case 5: {
-                cout << "Titulo del libro a devolver: ";
+                cout << "-------------------------------------Datos del libro a devolver----------------------------------------------\n";
+                cout << "Titulo del libro: ";
                 getline(cin, titulo);
                 cout << "Autor: ";
                 getline(cin, autor);
-                devolverLibro(libros, contadorLibros, titulo, autor);
+
+                cout << "Ingresa tu DNI: ";
+                cin >> dni;
+                cin.ignore();
+                devolverLibro(libros, contadorLibros, titulo, autor, dni);
                 system("pause");
                 break;
             }
@@ -138,11 +169,17 @@ void buscarLibro(Libro libros[], int cant, string titulo, string autor) {
 }
 
 void imprimelibro(Libro &l){
-    cout << "Libro: "<< l.titulo << endl;
+    cout << "Libro: " << l.titulo << endl;
     cout << "Autor: " << l.autor << endl;
     cout << "Edicion: " << l.edicion << endl;
     cout << "Anio: " << l.anio << endl;
     cout << "Estado: " << l.estado << endl;
+}
+
+void imprimecliente(Cliente &c){
+    cout << "Nombre: " << c.nombre << endl;
+    cout << "Edad: " << c.edad << endl;
+    cout << "DNI: " << c.dni << endl;
 }
 
 void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio) {
@@ -152,14 +189,21 @@ void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio) {
     l.anio = anio;
 }
 
-void prestarLibro(Libro libros[], int cant, string titulo, string autor) {
+void leercliente(Cliente &c, string nombre, int edad, int dni){
+    c.nombre = nombre;
+    c.edad = edad;
+    c.dni = dni;
+}
+
+void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni) {
     for (int i = 0; i < cant; i++) {
         if (libros[i].titulo == titulo && libros[i].autor == autor) {
             if (libros[i].estado == "prestado") {
                 cout << "Este libro ya está prestado.\n";
             } else {
                 libros[i].estado = "prestado";
-                cout << "Libro prestado con éxito.\n";
+                libros[i].dni_cliente = dni;
+                cout << "Libro prestado con éxito al cliente con DNI: " << dni << endl;
             }
             return;
         }
@@ -167,14 +211,16 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor) {
     cout << "Libro no encontrado.\n";
 }
 
-void devolverLibro(Libro libros[], int cant, string titulo, string autor) {
+void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dni) {
     for (int i = 0; i < cant; i++) {
         if (libros[i].titulo == titulo && libros[i].autor == autor) {
             if (libros[i].estado == "disponible") {
                 cout << "Ese libro ya está disponible.\n";
+            } else if (libros[i].dni_cliente != dni) {
+                cout << "DNI incorrecto. No puedes devolver un libro que no has prestado.\n";
             } else {
                 libros[i].estado = "disponible";
-                cout << "Libro devuelto con éxito.\n";
+                cout << "Libro devuelto con exito.\n";
             }
             return;
         }
