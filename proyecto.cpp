@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <random>
+#include <ctime> 
 using namespace std;
 
 struct Cliente{
@@ -16,6 +16,7 @@ struct Libro {
     int anio;
     string estado = "disponible"; 
     int dni_cliente; 
+    int codigo_seguridad = 0;
 };
 
 void buscarLibro(Libro[], int, string, string);
@@ -200,10 +201,13 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni
         if (libros[i].titulo == titulo && libros[i].autor == autor) {
             if (libros[i].estado == "prestado") {
                 cout << "Este libro ya está prestado.\n";
-            } else {
+            } 
+            else {
                 libros[i].estado = "prestado";
                 libros[i].dni_cliente = dni;
-                cout << "Libro prestado con éxito al cliente con DNI: " << dni << endl;
+                libros[i].codigo_seguridad = rand() % 9000 + 1000; 
+                cout << "Libro prestado con exito al cliente con DNI: " << dni << endl;
+                cout << "Codigo de seguridad del prestamo: " << libros[i].codigo_seguridad << endl;
             }
             return;
         }
@@ -212,15 +216,28 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni
 }
 
 void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dni) {
+    int codigo_input;
+
     for (int i = 0; i < cant; i++) {
         if (libros[i].titulo == titulo && libros[i].autor == autor) {
             if (libros[i].estado == "disponible") {
                 cout << "Ese libro ya está disponible.\n";
-            } else if (libros[i].dni_cliente != dni) {
+            } 
+            else if (libros[i].dni_cliente != dni) {
                 cout << "DNI incorrecto. No puedes devolver un libro que no has prestado.\n";
-            } else {
-                libros[i].estado = "disponible";
-                cout << "Libro devuelto con exito.\n";
+            } 
+            else {
+                cout << "Ingresa el codigo de seguridad del prestamo: ";
+                cin >> codigo_input;
+
+                if (libros[i].codigo_seguridad == codigo_input) {
+                    libros[i].estado = "disponible";
+                    libros[i].codigo_seguridad = 0; 
+                    cout << "Libro devuelto con exito.\n";
+                }
+                else {
+                    cout << "Codigo de seguridad incorrecto. No se puede devolver el libro.\n";
+                }
             }
             return;
         }
