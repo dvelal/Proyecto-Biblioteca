@@ -413,6 +413,51 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Quimica para Ingenieria", "Carlos Zavala", 1, 2016, "Ciencias", "Quimica"};
     libros[contador++] = {"Fundamentos de Quimica", "Manuel Ventura", 1, 2017, "Ciencias", "Quimica"};
     libros[contador++] = {"Ejercicios de Quimica Basica", "Jose Cardenas", 1, 2021, "Ciencias", "Quimica"};
+
+    //Ciencias - Astronomia
+    libros[contador++] = {"Cosmos", "Carl Sagan", 1, 1980, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Astrophysics for People in a Hurry", "Neil deGrasse Tyson", 1, 2017, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Una Breve Historia de Casi Todo", "Bill Bryson", 1, 2003, "Ciencias", "Astronomia"};
+    libros[contador++] = {"El Universo en una Cascara de Nuez", "Stephen Hawking", 1, 2001, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Pale Blue Dot", "Carl Sagan", 1, 1994, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Los Pilares de la Creacion", "Alan Hirshfeld", 1, 2002, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Historia del Tiempo", "Stephen Hawking", 1, 1988, "Ciencias", "Astronomia"};
+
+    //Ciencias - Biologia
+    libros[contador++] = {"Biologia", "Neil A. Campbell", 11, 2017, "Ciencias", "Biologia"};
+    libros[contador++] = {"Biologia Celular y Molecular", "Gerald Karp", 8, 2016, "Ciencias", "Biologia"};
+    libros[contador++] = {"El Origen de las Especies", "Charles Darwin", 1, 1859, "Ciencias", "Biologia"};
+    libros[contador++] = {"Genes, Desarrollo y Genomas", "Nancy Hopkins", 1, 2002, "Ciencias", "Biologia"};
+    libros[contador++] = {"Principios de Bioquimica", "Albert L. Lehninger", 7, 2017, "Ciencias", "Biologia"};
+    libros[contador++] = {"La Doble Helice", "James D. Watson", 1, 1968, "Ciencias", "Biologia"};
+    libros[contador++] = {"Microbiologia", "Prescott's", 11, 2020, "Ciencias", "Biologia"};
+
+    //Ciencias - Geologia
+    libros[contador++] = {"Fundamentos de Geologia Fisica", "Arthur N. Strahler", 5, 2011, "Ciencias", "Geologia"};
+    libros[contador++] = {"Geologia Ambiental", "Edward A. Keller", 11, 2019, "Ciencias", "Geologia"};
+    libros[contador++] = {"Geologia General", "Richard Foster Flint", 3, 1983, "Ciencias", "Geologia"};
+    libros[contador++] = {"La Historia de la Tierra", "Robert M. Hazen", 2, 2012, "Ciencias", "Geologia"};
+    libros[contador++] = {"Geologia de Campo", "F.J. Grout", 1, 1971, "Ciencias", "Geologia"};
+    libros[contador++] = {"Introduccion a la Geologia", "Frederick K. Lutgens", 13, 2016, "Ciencias", "Geologia"};
+    libros[contador++] = {"Vulcanologia", "Hans-Ulrich Schmincke", 2, 2004, "Ciencias", "Geologia"};
+
+    //Ciencias - Ecologia
+    libros[contador++] = {"Ecologia: Principios y Aplicaciones", "Manuel C. Molles Jr.", 8, 2018, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Fundamentos de Ecologia", "Eugene P. Odum", 5, 2005, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia Humana", "Gerald G. Marten", 1, 2001, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Conservacion de la Biodiversidad", "Richard B. Primack", 8, 2018, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia Urbana", "Marina Alberti", 1, 2008, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Los Limites del Crecimiento", "Donella H. Meadows", 1, 1972, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Principios de Ecologia de Poblaciones", "Thomas M. Smith", 1, 2009, "Ciencias", "Ecologia"};
+
+    //Ciencias - Neurociencia
+    libros[contador++] = {"Principios de Neurociencia", "Eric R. Kandel", 5, 2013, "Ciencias", "Neurociencia"};
+    libros[contador++] = {"Neurociencia Cognitiva", "Michael S. Gazzaniga", 5, 2018, "Ciencias", "Neurociencia"};
+    libros[contador++] = {"Fundamentos de Neurociencia", "Dale Purves", 4, 2012, "Ciencias", "Neurociencia"};
+    libros[contador++] = {"La Mente de la Mente", "Oliver Sacks", 1, 2010, "Ciencias", "Neurociencia"};
+    libros[contador++] = {"El Cerebro: La Historia de Usted", "David Eagleman", 1, 2015, "Ciencias", "Neurociencia"};
+    libros[contador++] = {"Neurociencia del Comportamiento", "Marc Breedlove", 8, 2016, "Ciencias", "Neurociencia"};
+    libros[contador++] = {"Introduccion a la Neurociencia", "Dale Purves", 1, 2000, "Ciencias", "Neurociencia"};
     
     //Literatura - Peruana
     libros[contador++] = {"Los rios profundos", "Jose Arguedas", 1, 1958, "Literatura", "Peruana"};
