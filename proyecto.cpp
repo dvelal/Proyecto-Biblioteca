@@ -1,7 +1,13 @@
 #include <iostream>
 #include <string>
 #include <ctime> 
+#include <windows.h>
 using namespace std;
+
+string amarillo = "\033[1;33m";
+string verde = "\033[0;32m";
+string rojo = "\033[0;31m";
+string reset = "\033[0m";
 
 struct Cliente{
     string nombre;
@@ -14,6 +20,8 @@ struct Libro {
     string autor;
     int edicion;
     int anio;
+    string categoria;
+    string subcategoria;
     string estado = "disponible"; 
     int dni_cliente; 
     int codigo_seguridad = 0;
@@ -82,7 +90,7 @@ int main() {
 
                 leerLibro(libros[contadorLibros], titulo, autor, edicion, anio);
                 contadorLibros++;
-                cout << "Libro agregado con exito.\n";
+                cout << verde << "Libro agregado con exito.\n" << reset;
                 system("pause");
                 break;
             }
@@ -147,7 +155,8 @@ int main() {
                 break;
 
             default:
-                cout << "Opcion invalida.\n";
+                cout << rojo << "Opcion invalida." << reset << endl;
+                system("pause");
         }
         system("cls");
     } while (op != 0);
@@ -159,13 +168,13 @@ void buscarLibro(Libro libros[], int cant, string titulo, string autor) {
     int encontra = 0;
     for (int i = 0; i < cant; i++){
         if (libros[i].titulo == titulo && libros[i].autor == autor){
-            cout << "\nLibro encontrado:\n";
+            cout << verde << "\nLibro encontrado:\n" << reset;
             imprimelibro(libros[i]);
             encontra=i+1;
         }
     }
     if (encontra == 0){
-        cout << "No existe el libro"<<endl;
+        cout << rojo << "No existe el libro" << reset << endl;
     }
 }
 
@@ -200,19 +209,19 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni
     for (int i = 0; i < cant; i++) {
         if (libros[i].titulo == titulo && libros[i].autor == autor) {
             if (libros[i].estado == "prestado") {
-                cout << "Este libro ya está prestado.\n";
+                cout << amarillo << "Este libro ya está prestado.\n" << reset;
             } 
             else {
                 libros[i].estado = "prestado";
                 libros[i].dni_cliente = dni;
                 libros[i].codigo_seguridad = rand() % 9000 + 1000; 
-                cout << "Libro prestado con exito al cliente con DNI: " << dni << endl;
+                cout << verde << "Libro prestado con exito al cliente con DNI: " << dni << reset << endl;
                 cout << "Codigo de seguridad del prestamo: " << libros[i].codigo_seguridad << endl;
             }
             return;
         }
     }
-    cout << "Libro no encontrado.\n";
+    cout << rojo << "Libro no encontrado.\n" << reset;
 }
 
 void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dni) {
@@ -221,10 +230,10 @@ void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dn
     for (int i = 0; i < cant; i++) {
         if (libros[i].titulo == titulo && libros[i].autor == autor) {
             if (libros[i].estado == "disponible") {
-                cout << "Ese libro ya está disponible.\n";
+                cout << amarillo << "Ese libro ya está disponible.\n" << reset;
             } 
             else if (libros[i].dni_cliente != dni) {
-                cout << "DNI incorrecto. No puedes devolver un libro que no has prestado.\n";
+                cout << rojo << "DNI incorrecto. No puedes devolver un libro que no has prestado.\n" << reset;
             } 
             else {
                 cout << "Ingresa el codigo de seguridad del prestamo: ";
@@ -233,14 +242,14 @@ void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dn
                 if (libros[i].codigo_seguridad == codigo_input) {
                     libros[i].estado = "disponible";
                     libros[i].codigo_seguridad = 0; 
-                    cout << "Libro devuelto con exito.\n";
+                    cout << verde << "Libro devuelto con exito.\n" << reset;
                 }
                 else {
-                    cout << "Codigo de seguridad incorrecto. No se puede devolver el libro.\n";
+                    cout << rojo << "Codigo de seguridad incorrecto. No se puede devolver el libro.\n" << reset;
                 }
             }
             return;
         }
     }
-    cout << "Libro no encontrado.\n";
+    cout << rojo << "Libro no encontrado.\n" << reset;
 }
