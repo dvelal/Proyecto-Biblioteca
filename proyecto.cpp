@@ -197,7 +197,7 @@ void mostrarLibros(Libro libros[], int cantidad) {
          << setw(10) << "Edicion"
          << setw(10) << "Anio"
          << setw(12) << "Categoria"
-         << setw(30) << "Subcategoria" 
+         << setw(23) << "Subcategoria" 
          << setw(15) << "Estado" << endl;
 
     cout << string(167, '-') << endl;
@@ -209,11 +209,11 @@ void mostrarLibros(Libro libros[], int cantidad) {
              << setw(10) << libros[i].edicion
              << setw(10) << libros[i].anio
              << setw(12) << libros[i].categoria
-             << setw(30) << libros[i].subcategoria;
-        if (libros[i].estado == "disponible")
-            cout << left << setw(15) << azul << libros[i].estado << reset << endl;
-        else
-            cout << left << setw(15) << rojo << libros[i].estado << reset << endl;
+             << setw(15) << libros[i].subcategoria;
+            if (libros[i].estado == "disponible")
+                cout << left << setw(15) << azul << libros[i].estado << reset << endl;
+            else
+                cout << left << setw(15) << rojo << libros[i].estado << reset << endl;
     }
 }
 
@@ -347,14 +347,6 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Teoria y Practica de Algebra", "Jose Rojas", 2, 2018, "Matematica", "Algebra"};
     libros[contador++] = {"Algebra Basica para pre", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
 
-    //Matematica - Ecuaciones Diferenciales
-    libros[contador++] = {"Ecuaciones Diferenciales con Aplicaciones de Modelado", "Dennis G. Zill", 11, 2018, "Matematica", "Ecuaciones Diferenciales"};
-    libros[contador++] = {"Curso de Ecuaciones Diferenciales", "Richard C. DiPrima", 7, 2012, "Matematica", "Ecuaciones Diferenciales"};
-    libros[contador++] = {"Introduccion a las Ecuaciones Diferenciales", "Serge Lang", 1, 1990, "Matematica", "Ecuaciones Diferenciales"};
-    libros[contador++] = {"Ecuaciones Diferenciales Aplicadas", "Murray R. Spiegel", 3, 2004, "Matematica", "Ecuaciones Diferenciales"};
-    libros[contador++] = {"Metodos Matematicos para Ingenieros y Cientificos", "George B. Arfken", 7, 2012, "Matematica", "Ecuaciones Diferenciales"};
-    libros[contador++] = {"Ecuaciones Diferenciales Parciales", "L.C. Evans", 2, 2010, "Matematica", "Ecuaciones Diferenciales"};
-
     //Matematica - Estadistica
     libros[contador++] = {"Estadistica Matematica con Aplicaciones", "John E. Freund", 8, 2010, "Matematica", "Estadistica"};
     libros[contador++] = {"Probabilidad y Estadistica para Ingenieria y Ciencias", "Ronald E. Walpole", 9, 2012, "Matematica", "Estadistica"};
@@ -372,15 +364,6 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria"};
     libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria"};
     libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria"};
-
-    //Matematica - Teoria de Numeros
-    libros[contador++] = {"Introduccion a la Teoria de Numeros", "David M. Burton", 7, 2012, "Matematica", "Teoria de Numeros"};
-    libros[contador++] = {"Teoria de Numeros", "G.H. Hardy", 6, 2008, "Matematica", "Teoria de Numeros"};
-    libros[contador++] = {"Una Introduccion a la Teoria de Numeros", "Ivan Niven", 5, 1991, "Matematica", "Teoria de Numeros"};
-    libros[contador++] = {"Problemas de Teoria de Numeros", "D. M. Burton", 1, 2006, "Matematica", "Teoria de Numeros"};
-    libros[contador++] = {"Fundamentos de Teoria de Numeros", "William J. LeVeque", 1, 1977, "Matematica", "Teoria de Numeros"};
-    libros[contador++] = {"Teoria de Numeros Elementales", "Joseph H. Silverman", 1, 2018, "Matematica", "Teoria de Numeros"};
-    libros[contador++] = {"Teoria de Numeros para Principiantes", "Kim S. Kwong", 1, 2019, "Matematica", "Teoria de Numeros"};
 
     //Matematica - Topologia
     libros[contador++] = {"Topologia", "James R. Munkres", 2, 2000, "Matematica", "Topologia"};
@@ -463,54 +446,220 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Aves sin nido", "Clorinda Matto de Turner", 1, 1889, "Literatura", "Peruana"};
     libros[contador++] = {"El tungsteno", "Cesar Vallejo", 1, 1931, "Literatura", "Peruana"};
 
-    // Literatura - Argentina
-    libros[contador++] = {"Ficciones", "Jorge Luis Borges", 1, 1944, "Literatura", "Argentina"};
-    libros[contador++] = {"Rayuela", "Julio Cortazar", 1, 1963, "Literatura", "Argentina"};
-    libros[contador++] = {"El Tunel", "Ernesto Sabato", 1, 1948, "Literatura", "Argentina"};
-    libros[contador++] = {"Martin Fierro", "Jose Hernandez", 1, 1872, "Literatura", "Argentina"};
-    libros[contador++] = {"Adan Buenosayres", "Leopoldo Marechal", 1, 1948, "Literatura", "Argentina"};
-    libros[contador++] = {"Boquitas Pintadas", "Manuel Puig", 1, 1969, "Literatura", "Argentina"};
+    // Economia - Microeconomia
+    libros[contador++] = {"Principios de microeconomia", "Rosa Salazar", 1, 2018, "Economia", "Microeconomia"};
+    libros[contador++] = {"Microeconomia intermedia", "Luis Camargo", 2, 2019, "Economia", "Microeconomia"};
+    libros[contador++] = {"Teoria del consumidor", "Claudia Poma", 1, 2020, "Economia", "Microeconomia"};
+    libros[contador++] = {"Analisis de oferta y demanda", "Carlos Huamani", 2, 2021, "Economia", "Microeconomia"};
+    libros[contador++] = {"Estructura de mercados", "Elena Quispe", 1, 2022, "Economia", "Microeconomia"};
+    libros[contador++] = {"Microeconomia aplicada", "Oscar Nina", 3, 2023, "Economia", "Microeconomia"};
+    libros[contador++] = {"Costos de produccion", "Ana Ludeña", 1, 2020, "Economia", "Microeconomia"};
+    libros[contador++] = {"Teoria de juegos", "Pedro Mamani", 1, 2021, "Economia", "Microeconomia"};
+    libros[contador++] = {"Externalidades y bienes publicos", "Flor Caceres", 2, 2022, "Economia", "Microeconomia"};
+    libros[contador++] = {"Mercados imperfectos", "Julio Paredes", 1, 2023, "Economia", "Microeconomia"};
 
-    // Literatura - Espana
-    libros[contador++] = {"Don Quijote de la Mancha", "Miguel de Cervantes", 1, 1605, "Literatura", "Espana"};
-    libros[contador++] = {"La Sombra del Viento", "Carlos Ruiz Zafon", 1, 2001, "Literatura", "Espana"};
-    libros[contador++] = {"La Casa de Bernarda Alba", "Federico Garcia Lorca", 1, 1936, "Literatura", "Espana"};
-    libros[contador++] = {"Nada", "Carmen Laforet", 1, 1945, "Literatura", "Espana"};
-    libros[contador++] = {"Platero y Yo", "Juan Ramon Jimenez", 1, 1914, "Literatura", "Espana"};
-    libros[contador++] = {"El Lazarillo de Tormes", "Anonimo", 1, 1554, "Literatura", "Espana"};
+    // Economia - Macroeconomia
+    libros[contador++] = {"Fundamentos de macroeconomia", "Sofia Ramos", 1, 2018, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Macroeconomia intermedia", "Ricardo Calla", 2, 2019, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Inflacion y desempleo", "Carmen Huanca", 1, 2020, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Cuentas nacionales", "Javier Ticona", 2, 2021, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Politica monetaria", "Tatiana Chahuares", 1, 2022, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Crecimiento economico", "Renato Apaza", 3, 2023, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Ciclo economico", "Nataly Vizcarra", 1, 2020, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Modelo IS-LM", "Edgar Quispe", 2, 2021, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Balanza de pagos", "Lucia Nina", 1, 2022, "Economia", "Macroeconomia"};
+    libros[contador++] = {"Mercado de trabajo", "Angelica Mendoza", 1, 2023, "Economia", "Macroeconomia"};
 
-    // Literatura - Mexico
-    libros[contador++] = {"Pedro Paramo", "Juan Rulfo", 1, 1955, "Literatura", "Mexico"};
-    libros[contador++] = {"Como Agua para Chocolate", "Laura Esquivel", 1, 1989, "Literatura", "Mexico"};
-    libros[contador++] = {"Aura", "Carlos Fuentes", 1, 1962, "Literatura", "Mexico"};
-    libros[contador++] = {"El Laberinto de la Soledad", "Octavio Paz", 1, 1950, "Literatura", "Mexico"};
-    libros[contador++] = {"Los de Abajo", "Mariano Azuela", 1, 1915, "Literatura", "Mexico"};
-    libros[contador++] = {"Balun Canan", "Rosario Castellanos", 1, 1957, "Literatura", "Mexico"};
+    // Economia - Finanzas
+    libros[contador++] = {"Introduccion a las finanzas", "Hugo Poma", 1, 2018, "Economia", "Finanzas"};
+    libros[contador++] = {"Finanzas corporativas", "Lorena Huamani", 2, 2019, "Economia", "Finanzas"};
+    libros[contador++] = {"Mercado de capitales", "Jaime Chura", 1, 2020, "Economia", "Finanzas"};
+    libros[contador++] = {"Inversiones financieras", "Lucero Lazo", 2, 2021, "Economia", "Finanzas"};
+    libros[contador++] = {"Riesgo y rendimiento", "Victor Caceres", 1, 2022, "Economia", "Finanzas"};
+    libros[contador++] = {"Analisis financiero", "Noemi Ramos", 3, 2023, "Economia", "Finanzas"};
+    libros[contador++] = {"Valuacion de activos", "Carlos Apaza", 1, 2020, "Economia", "Finanzas"};
+    libros[contador++] = {"Gestion financiera", "Evelyn Ticona", 2, 2021, "Economia", "Finanzas"};
+    libros[contador++] = {"Presupuestos empresariales", "Fernando Quispe", 1, 2022, "Economia", "Finanzas"};
+    libros[contador++] = {"Finanzas personales", "Diana Salas", 1, 2023, "Economia", "Finanzas"};
 
-    // Literatura - Colombia
-    libros[contador++] = {"Cien Anos de Soledad", "Gabriel Garcia Marquez", 1, 1967, "Literatura", "Colombia"};
-    libros[contador++] = {"El Amor en los Tiempos del Colera", "Gabriel Garcia Marquez", 1, 1985, "Literatura", "Colombia"};
-    libros[contador++] = {"La Voragine", "Jose Eustasio Rivera", 1, 1924, "Literatura", "Colombia"};
-    libros[contador++] = {"Cronica de una Muerte Anunciada", "Gabriel Garcia Marquez", 1, 1981, "Literatura", "Colombia"};
-    libros[contador++] = {"Maria", "Jorge Isaacs", 1, 1867, "Literatura", "Colombia"};
-    libros[contador++] = {"El Coronel no tiene quien le escriba", "Gabriel Garcia Marquez", 1, 1961, "Literatura", "Colombia"};
-    libros[contador++] = {"Del Amor y Otros Demonios", "Gabriel Garcia Marquez", 1, 1994, "Literatura", "Colombia"};
+    // Economia - Contabilidad
+    libros[contador++] = {"Contabilidad general", "Roxana Nina", 1, 2018, "Economia", "Contabilidad"};
+    libros[contador++] = {"Contabilidad financiera", "Luis Huayta", 2, 2019, "Economia", "Contabilidad"};
+    libros[contador++] = {"Contabilidad de costos", "Paola Rojas", 1, 2020, "Economia", "Contabilidad"};
+    libros[contador++] = {"Contabilidad gerencial", "Juliana Chambi", 2, 2021, "Economia", "Contabilidad"};
+    libros[contador++] = {"Estados financieros", "Erick Mamani", 1, 2022, "Economia", "Contabilidad"};
+    libros[contador++] = {"Analisis contable", "Camila Vilca", 3, 2023, "Economia", "Contabilidad"};
+    libros[contador++] = {"Normas contables", "Walter Calla", 1, 2020, "Economia", "Contabilidad"};
+    libros[contador++] = {"Contabilidad tributaria", "Vanessa Nina", 2, 2021, "Economia", "Contabilidad"};
+    libros[contador++] = {"Auditoria financiera", "Elmer Quispe", 1, 2022, "Economia", "Contabilidad"};
+    libros[contador++] = {"Contabilidad para pymes", "Sandra Huamani", 1, 2023, "Economia", "Contabilidad"};
 
-    // Literatura - Chile
-    libros[contador++] = {"Veinte Poemas de Amor y una Cancion Desesperada", "Pablo Neruda", 1, 1924, "Literatura", "Chile"};
-    libros[contador++] = {"La Casa de los Espiritus", "Isabel Allende", 1, 1982, "Literatura", "Chile"};
-    libros[contador++] = {"Canto General", "Pablo Neruda", 1, 1950, "Literatura", "Chile"};
-    libros[contador++] = {"El Cartero de Neruda (Ardiente Paciencia)", "Antonio Skarmeta", 1, 1985, "Literatura", "Chile"};
-    libros[contador++] = {"Hijo de Ladron", "Manuel Rojas", 1, 1951, "Literatura", "Chile"};
-    libros[contador++] = {"Nocturno de Chile", "Roberto Bolano", 1, 2000, "Literatura", "Chile"};
+    // Ingenieria - Civil
+    libros[contador++] = {"Fundamentos de ingenieria civil", "Luis Cardenas", 1, 2018, "Ingenieria", "Civil"};
+    libros[contador++] = {"Diseño estructural basico", "Ana Rojas", 2, 2019, "Ingenieria", "Civil"};
+    libros[contador++] = {"Construccion de carreteras", "Julio Pacheco", 1, 2020, "Ingenieria", "Civil"};
+    libros[contador++] = {"Mecanica de suelos", "Rosa Luyo", 3, 2021, "Ingenieria", "Civil"};
+    libros[contador++] = {"Hormigon armado", "Carlos Ninanya", 1, 2022, "Ingenieria", "Civil"};
+    libros[contador++] = {"Gestion de proyectos civiles", "Esteban Quispe", 2, 2023, "Ingenieria", "Civil"};
+    libros[contador++] = {"Topografia moderna", "Luz Mendoza", 1, 2021, "Ingenieria", "Civil"};
+    libros[contador++] = {"Ingenieria hidraulica", "Victor Poma", 1, 2020, "Ingenieria", "Civil"};
+    libros[contador++] = {"Patologia de estructuras", "Gladys Ramos", 2, 2022, "Ingenieria", "Civil"};
+    libros[contador++] = {"Puentes y estructuras especiales", "Jose Ticona", 1, 2023, "Ingenieria", "Civil"};
 
-    // Literatura - Cuba
-    libros[contador++] = {"El Reino de Este Mundo", "Alejo Carpentier", 1, 1949, "Literatura", "Cuba"};
-    libros[contador++] = {"Tres Tristes Tigres", "Guillermo Cabrera Infante", 1, 1967, "Literatura", "Cuba"};
-    libros[contador++] = {"Paradiso", "Jose Lezama Lima", 1, 1966, "Literatura", "Cuba"};
-    libros[contador++] = {"Cecilia Valdes", "Cirilo Villaverde", 1, 1882, "Literatura", "Cuba"};
-    libros[contador++] = {"La Edad de Oro", "Jose Marti", 1, 1889, "Literatura", "Cuba"};
-    libros[contador++] = {"Memorias del Subdesarrollo", "Edmundo Desnoes", 1, 1965, "Literatura", "Cuba"};
-    libros[contador++] = {"Antes que Anochezca", "Reinaldo Arenas", 1, 1992, "Literatura", "Cuba"};
+    // Ingenieria - Mecanica
+    libros[contador++] = {"Termodinamica basica", "Oscar Mamani", 1, 2019, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Resistencia de materiales", "Lucia Vargas", 2, 2020, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Mecanica de fluidos", "Pedro Nina", 3, 2021, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Maquinas termicas", "Diana Quispe", 1, 2022, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Diseño de maquinas", "Hector Ancco", 2, 2023, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Instrumentacion mecanica", "Ruth Apaza", 1, 2020, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Tecnicas de manufactura", "Marco Salazar", 2, 2021, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Vibraciones mecanicas", "Evelyn Paredes", 1, 2022, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Elementos de maquinas", "Arturo Ludeña", 1, 2023, "Ingenieria", "Mecanica"};
+    libros[contador++] = {"Analisis de mecanismos", "Sandra Flores", 2, 2019, "Ingenieria", "Mecanica"};
+
+    // Ingenieria - Electrica
+    libros[contador++] = {"Circuitos electricos", "Cesar Ramos", 1, 2018, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Maquinas electricas", "Natalia Huamani", 2, 2020, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Electrotecnia basica", "Luis Chahuares", 1, 2019, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Instalaciones electricas", "Veronica Salas", 3, 2021, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Transformadores", "Hugo Quispe", 2, 2022, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Proteccion de sistemas electricos", "Martha Apaza", 1, 2023, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Control automatico", "Ivan Chambi", 2, 2020, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Energia renovable", "Clara Lazo", 1, 2022, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Sistemas de potencia", "Gustavo Rojas", 3, 2023, "Ingenieria", "Electrica"};
+    libros[contador++] = {"Alumbrado y eficiencia energetica", "Elena Huayta", 1, 2021, "Ingenieria", "Electrica"};
+
+    // Ingenieria - Sistemas
+    libros[contador++] = {"Programacion en C++", "Fernando Quispe", 1, 2018, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Base de datos relacional", "Roxana Calla", 2, 2019, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Ingenieria de software", "Carlos Vizcarra", 3, 2020, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Sistemas operativos", "Isabel Nina", 1, 2021, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Redes de computadoras", "Jaime Chura", 2, 2022, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Algoritmos y estructuras de datos", "Nancy Ramos", 1, 2023, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Desarrollo web", "Alvaro Mendoza", 2, 2020, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Inteligencia artificial", "Carmen Poma", 1, 2021, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Ciberseguridad basica", "Renzo Gutierrez", 1, 2022, "Ingenieria", "Sistemas"};
+    libros[contador++] = {"Arquitectura de computadoras", "Liliana Salazar", 3, 2023, "Ingenieria", "Sistemas"};
+
+    // Ingenieria - Industrial
+    libros[contador++] = {"Gestion de calidad", "Erika Vilca", 1, 2018, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Logistica y produccion", "Jorge Caceres", 2, 2019, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Investigacion de operaciones", "Carla Ludeña", 3, 2020, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Seguridad industrial", "Walter Huamani", 1, 2021, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Gestion de procesos", "Ines Paredes", 2, 2022, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Productividad y eficiencia", "Hernan Salas", 1, 2023, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Gestion del mantenimiento", "Yessica Chambi", 2, 2020, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Analisis de costos", "Raul Quispe", 1, 2021, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Ingenieria de metodos", "Diana Ticona", 2, 2022, "Ingenieria", "Industrial"};
+    libros[contador++] = {"Estadistica aplicada", "Martin Calla", 1, 2023, "Ingenieria", "Industrial"};
+
+    // Medicina - Anatomia
+    libros[contador++] = {"Anatomia humana basica", "Luis Huamani", 1, 2018, "Medicina", "Anatomia"};
+    libros[contador++] = {"Atlas de anatomia", "Rosa Quispe", 2, 2020, "Medicina", "Anatomia"};
+    libros[contador++] = {"Anatomia para estudiantes", "Jorge Apaza", 3, 2019, "Medicina", "Anatomia"};
+    libros[contador++] = {"Sistema oseo", "Elena Paredes", 1, 2021, "Medicina", "Anatomia"};
+    libros[contador++] = {"Anatomia del sistema nervioso", "Carmen Luyo", 2, 2022, "Medicina", "Anatomia"};
+    libros[contador++] = {"Anatomia funcional", "Walter Chura", 1, 2020, "Medicina", "Anatomia"};
+    libros[contador++] = {"Guia de diseccion", "Margarita Calla", 1, 2019, "Medicina", "Anatomia"};
+    libros[contador++] = {"Musculos y huesos", "Julio Pari", 2, 2021, "Medicina", "Anatomia"};
+    libros[contador++] = {"Anatomia clinica", "Ana Romero", 1, 2022, "Medicina", "Anatomia"};
+    libros[contador++] = {"Introduccion a la anatomia", "Carlos Yupanqui", 1, 2023, "Medicina", "Anatomia"};
+
+    // Medicina - Fisiologia
+    libros[contador++] = {"Fisiologia humana", "Lucia Valverde", 1, 2018, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fundamentos de fisiologia", "Oscar Mamani", 2, 2020, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fisiologia del sistema digestivo", "Sandra Huayta", 1, 2021, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fisiologia cardiovascular", "Victor Ancco", 2, 2022, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fisiologia pulmonar", "Mercedes Chuquimia", 1, 2019, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fisiologia aplicada", "Raul Ticona", 2, 2020, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fisiologia endocrina", "Ester Nina", 1, 2022, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Control del sistema nervioso", "Hector Rojas", 1, 2023, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Regulacion y homeostasis", "Maria Ludeña", 3, 2021, "Medicina", "Fisiologia"};
+    libros[contador++] = {"Fisiologia del movimiento", "Alberto Salazar", 2, 2020, "Medicina", "Fisiologia"};
+
+    // Medicina - Farmacologia
+    libros[contador++] = {"Introduccion a la farmacologia", "Daniela Vizcarra", 1, 2020, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Farmacos esenciales", "Andres Ramos", 2, 2021, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Manual de farmacologia", "Veronica Zevallos", 1, 2022, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Farmacologia clinica", "Ernesto Guzman", 1, 2019, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Farmacocinetica basica", "Milagros Poma", 2, 2020, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Medicamentos del sistema nervioso", "Bruno Medina", 1, 2021, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Farmacologia de urgencias", "Patricia Caceres", 1, 2023, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Interacciones farmacologicas", "Cesar Rivera", 2, 2022, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Farmacos antimicrobianos", "Nora Galvez", 1, 2020, "Medicina", "Farmacologia"};
+    libros[contador++] = {"Guia de medicamentos", "Jaime Loayza", 2, 2021, "Medicina", "Farmacologia"};
+
+    // Medicina - General
+    libros[contador++] = {"Principios de medicina general", "Isabel Flores", 1, 2018, "Medicina", "General"};
+    libros[contador++] = {"Diagnostico clinico", "Felix Paredes", 2, 2019, "Medicina", "General"};
+    libros[contador++] = {"Tratamiento ambulatorio", "Ruben Chambi", 1, 2020, "Medicina", "General"};
+    libros[contador++] = {"Medicina preventiva", "Cecilia Asto", 2, 2021, "Medicina", "General"};
+    libros[contador++] = {"Salud publica", "Norma Chahuares", 1, 2022, "Medicina", "General"};
+    libros[contador++] = {"Manual del medico rural", "Hugo Ninanya", 1, 2023, "Medicina", "General"};
+    libros[contador++] = {"Atencion primaria", "Paola Rojas", 2, 2020, "Medicina", "General"};
+    libros[contador++] = {"Medicina basada en evidencia", "Renzo Torres", 1, 2022, "Medicina", "General"};
+    libros[contador++] = {"Urgencias medicas", "Silvia Pacco", 2, 2021, "Medicina", "General"};
+    libros[contador++] = {"Cuidados integrales", "Jesus Chumpitaz", 3, 2023, "Medicina", "General"};
+
+    // Idioma - Ingles
+    libros[contador++] = {"Guia de Ingles", "Maria Lopez", 1, 2020, "Idioma", "Ingles"};
+    libros[contador++] = {"Manual de Ingles", "Maria Lopez", 2, 2021, "Idioma", "Ingles"};
+    libros[contador++] = {"Aprende Ingles", "Maria Lopez", 1, 2022, "Idioma", "Ingles"};
+    libros[contador++] = {"Curso basico de Ingles", "Maria Lopez", 3, 2020, "Idioma", "Ingles"};
+    libros[contador++] = {"Introduccion a Ingles", "Maria Lopez", 1, 2021, "Idioma", "Ingles"};
+    libros[contador++] = {"Domina Ingles", "Maria Lopez", 2, 2023, "Idioma", "Ingles"};
+    libros[contador++] = {"Diccionario de Ingles", "Maria Lopez", 1, 2022, "Idioma", "Ingles"};
+    libros[contador++] = {"Frases utiles en Ingles", "Maria Lopez", 2, 2020, "Idioma", "Ingles"};
+    libros[contador++] = {"Conversaciones en Ingles", "Maria Lopez", 1, 2023, "Idioma", "Ingles"};
+    libros[contador++] = {"Gramatica de Ingles", "Maria Lopez", 3, 2021, "Idioma", "Ingles"};
+
+    // Idioma - Frances
+    libros[contador++] = {"Guia de Frances", "Jean Dupont", 1, 2020, "Idioma", "Frances"};
+    libros[contador++] = {"Manual de Frances", "Jean Dupont", 2, 2021, "Idioma", "Frances"};
+    libros[contador++] = {"Aprende Frances", "Jean Dupont", 1, 2022, "Idioma", "Frances"};
+    libros[contador++] = {"Curso basico de Frances", "Jean Dupont", 3, 2020, "Idioma", "Frances"};
+    libros[contador++] = {"Introduccion a Frances", "Jean Dupont", 1, 2021, "Idioma", "Frances"};
+    libros[contador++] = {"Domina Frances", "Jean Dupont", 2, 2023, "Idioma", "Frances"};
+    libros[contador++] = {"Diccionario de Frances", "Jean Dupont", 1, 2022, "Idioma", "Frances"};
+    libros[contador++] = {"Frases utiles en Frances", "Jean Dupont", 2, 2020, "Idioma", "Frances"};
+    libros[contador++] = {"Conversaciones en Frances", "Jean Dupont", 1, 2023, "Idioma", "Frances"};
+    libros[contador++] = {"Gramatica de Frances", "Jean Dupont", 3, 2021, "Idioma", "Frances"};
+
+    // Idioma - Quechua
+    libros[contador++] = {"Guia de Quechua", "Rumi Huaman", 1, 2020, "Idioma", "Quechua"};
+    libros[contador++] = {"Manual de Quechua", "Rumi Huaman", 2, 2021, "Idioma", "Quechua"};
+    libros[contador++] = {"Aprende Quechua", "Rumi Huaman", 1, 2022, "Idioma", "Quechua"};
+    libros[contador++] = {"Curso basico de Quechua", "Rumi Huaman", 3, 2020, "Idioma", "Quechua"};
+    libros[contador++] = {"Introduccion a Quechua", "Rumi Huaman", 1, 2021, "Idioma", "Quechua"};
+    libros[contador++] = {"Domina Quechua", "Rumi Huaman", 2, 2023, "Idioma", "Quechua"};
+    libros[contador++] = {"Diccionario de Quechua", "Rumi Huaman", 1, 2022, "Idioma", "Quechua"};
+    libros[contador++] = {"Frases utiles en Quechua", "Rumi Huaman", 2, 2020, "Idioma", "Quechua"};
+    libros[contador++] = {"Conversaciones en Quechua", "Rumi Huaman", 1, 2023, "Idioma", "Quechua"};
+    libros[contador++] = {"Gramatica de Quechua", "Rumi Huaman", 3, 2021, "Idioma", "Quechua"};
+
+    // Idioma - Aleman
+    libros[contador++] = {"Guia de Aleman", "Hans Becker", 1, 2020, "Idioma", "Aleman"};
+    libros[contador++] = {"Manual de Aleman", "Hans Becker", 2, 2021, "Idioma", "Aleman"};
+    libros[contador++] = {"Aprende Aleman", "Hans Becker", 1, 2022, "Idioma", "Aleman"};
+    libros[contador++] = {"Curso basico de Aleman", "Hans Becker", 3, 2020, "Idioma", "Aleman"};
+    libros[contador++] = {"Introduccion a Aleman", "Hans Becker", 1, 2021, "Idioma", "Aleman"};
+    libros[contador++] = {"Domina Aleman", "Hans Becker", 2, 2023, "Idioma", "Aleman"};
+    libros[contador++] = {"Diccionario de Aleman", "Hans Becker", 1, 2022, "Idioma", "Aleman"};
+    libros[contador++] = {"Frases utiles en Aleman", "Hans Becker", 2, 2020, "Idioma", "Aleman"};
+    libros[contador++] = {"Conversaciones en Aleman", "Hans Becker", 1, 2023, "Idioma", "Aleman"};
+    libros[contador++] = {"Gramatica de Aleman", "Hans Becker", 3, 2021, "Idioma", "Aleman"};
+
+    // Idioma - Chino
+    libros[contador++] = {"Guia de Chino", "Li Zhang", 1, 2020, "Idioma", "Chino"};
+    libros[contador++] = {"Manual de Chino", "Li Zhang", 2, 2021, "Idioma", "Chino"};
+    libros[contador++] = {"Aprende Chino", "Li Zhang", 1, 2022, "Idioma", "Chino"};
+    libros[contador++] = {"Curso basico de Chino", "Li Zhang", 3, 2020, "Idioma", "Chino"};
+    libros[contador++] = {"Introduccion a Chino", "Li Zhang", 1, 2021, "Idioma", "Chino"};
+    libros[contador++] = {"Domina Chino", "Li Zhang", 2, 2023, "Idioma", "Chino"};
+    libros[contador++] = {"Diccionario de Chino", "Li Zhang", 1, 2022, "Idioma", "Chino"};
+    libros[contador++] = {"Frases utiles en Chino", "Li Zhang", 2, 2020, "Idioma", "Chino"};
+    libros[contador++] = {"Conversaciones en Chino", "Li Zhang", 1, 2023, "Idioma", "Chino"};
+    libros[contador++] = {"Gramatica de Chino", "Li Zhang", 3, 2021, "Idioma", "Chino"};
 
 }
