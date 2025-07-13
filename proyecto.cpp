@@ -329,122 +329,197 @@ void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dn
 
 void cargarLibrosPredefinidos(Libro libros[], int &contador) {
 
-    //Matematica - Calculo
+    // Matematica - Calculo
     libros[contador++] = {"Calculo", "James Stewart", 8, 2020, "Matematica", "Calculo"};
-    libros[contador++] = {"Calculo I", "Luis Antonio Arana", 2, 2019, "Matematica", "Calculo"};
+    libros[contador++] = {"Calculo I", "Luis Arana", 2, 2019, "Matematica", "Calculo"};
     libros[contador++] = {"Calculo Diferencial", "Julio Rios", 3, 2016, "Matematica", "Calculo"};
-    libros[contador++] = {"Matematica para Ingenieria", "Carlos Zavala", 1, 2015, "Matematica", "Calculo"};
-    libros[contador++] = {"Curso de Calculo", "Pedro Poma", 4, 2018, "Matematica", "Calculo"};
+    libros[contador++] = {"Calculo Integral", "Pedro Poma", 4, 2018, "Matematica", "Calculo"};
+    libros[contador++] = {"Curso de Calculo", "Carlos Zavala", 1, 2015, "Matematica", "Calculo"};
     libros[contador++] = {"Introduccion al Calculo", "Manuel Ventura", 1, 2014, "Matematica", "Calculo"};
-    libros[contador++] = {"Fundamentos de Matematica", "Walter Apaza", 2, 2021, "Matematica", "Calculo"};
+    libros[contador++] = {"Fundamentos de Calculo", "Walter Apaza", 2, 2021, "Matematica", "Calculo"};
+    libros[contador++] = {"Problemas de Calculo", "Jose Rojas", 2, 2020, "Matematica", "Calculo"};
+    libros[contador++] = {"Matematica Avanzada", "Lucho Herrera", 1, 2017, "Matematica", "Calculo"};
+    libros[contador++] = {"Calculo Multivariable", "Enrique Torres", 1, 2022, "Matematica", "Calculo"};
 
-    //Matematica - Algebra
+    // Matematica - Algebra
     libros[contador++] = {"Algebra Lineal", "David Lay", 5, 2016, "Matematica", "Algebra"};
-    libros[contador++] = {"Algebra I", "Luis Antonio Arana", 3, 2020, "Matematica", "Algebra"};
+    libros[contador++] = {"Algebra I", "Luis Arana", 3, 2020, "Matematica", "Algebra"};
     libros[contador++] = {"Problemas de Algebra", "Walter Apaza", 2, 2019, "Matematica", "Algebra"};
     libros[contador++] = {"Algebra Elemental", "Cesar Delgado", 1, 2015, "Matematica", "Algebra"};
     libros[contador++] = {"Curso de Algebra", "Pedro Poma", 4, 2017, "Matematica", "Algebra"};
     libros[contador++] = {"Teoria y Practica de Algebra", "Jose Rojas", 2, 2018, "Matematica", "Algebra"};
-    libros[contador++] = {"Algebra Basica para pre", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
+    libros[contador++] = {"Algebra Basica", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
+    libros[contador++] = {"Algebra Moderna", "Maria Diaz", 2, 2020, "Matematica", "Algebra"};
+    libros[contador++] = {"Estructuras Algebraicas", "Ana Lopez", 1, 2014, "Matematica", "Algebra"};
+    libros[contador++] = {"Matrices y Determinantes", "Carlos Meneses", 1, 2023, "Matematica", "Algebra"};
 
-    //Matematica - Estadistica
-    libros[contador++] = {"Estadistica Matematica con Aplicaciones", "John E. Freund", 8, 2010, "Matematica", "Estadistica"};
-    libros[contador++] = {"Probabilidad y Estadistica para Ingenieria y Ciencias", "Ronald E. Walpole", 9, 2012, "Matematica", "Estadistica"};
-    libros[contador++] = {"Estadistica para Administracion y Economia", "Richard I. Levin", 7, 1999, "Matematica", "Estadistica"};
-    libros[contador++] = {"Estadistica Descriptiva e Inferencial", "Mario F. Triola", 13, 2018, "Matematica", "Estadistica"};
-    libros[contador++] = {"Introduccion a la Estadistica", "Sheldon M. Ross", 3, 2010, "Matematica", "Estadistica"};
-    libros[contador++] = {"Principios de Estadistica", "W.C. Scheaffer", 3, 2009, "Matematica", "Estadistica"};
-    libros[contador++] = {"Estadistica Aplicada a los Negocios y la Economia", "Douglas A. Lind", 17, 2019, "Matematica", "Estadistica"};
+    // Matematica - Geometria
+    libros[contador++] = {"Geometria Euclidiana", "Fernando Cardenas", 1, 2015, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Analitica", "Maria Romero", 2, 2017, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Plana", "Luis Suarez", 3, 2016, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria en el Espacio", "Pedro Diaz", 2, 2014, "Matematica", "Geometria"};
+    libros[contador++] = {"Figuras Geometricas", "Juan Vega", 1, 2013, "Matematica", "Geometria"};
+    libros[contador++] = {"Vectores y Geometria", "Carlos Inga", 1, 2021, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Diferencial", "Oscar Garcia", 1, 2020, "Matematica", "Geometria"};
+    libros[contador++] = {"Introduccion a la Geometria", "Carmen Valdez", 1, 2019, "Matematica", "Geometria"};
+    libros[contador++] = {"Problemas de Geometria", "Antonio Luna", 2, 2018, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria para Pre", "Lucia Reyes", 1, 2016, "Matematica", "Geometria"};
 
-    //Matematica - Geometria 
-    libros[contador++] = {"Geometria Diferencial de Curvas y Superficies", "Manfredo P. do Carmo", 2, 2016, "Matematica", "Geometria"};
-    libros[contador++] = {"Introduccion a la Geometria Diferencial", "Andrew Pressley", 2, 2010, "Matematica", "Geometria"};
-    libros[contador++] = {"Geometria Diferencial", "Michael Spivak", 3, 1999, "Matematica", "Geometria"};
-    libros[contador++] = {"Notas de Geometria Diferencial", "Oscar Garcia-Prada", 1, 2005, "Matematica", "Geometria"};
-    libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria"};
-    libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria"};
-    libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria"};
+    // Matematica - Aritmetica
+    libros[contador++] = {"Aritmetica I", "Luis Arana", 2, 2015, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Aritmetica Basica", "Carmen Flores", 1, 2016, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Curso de Aritmetica", "Pedro Poma", 2, 2017, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Aritmetica para Pre", "Walter Apaza", 1, 2014, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Teoria de Numeros", "Carlos Rojas", 2, 2020, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Aritmetica Moderna", "Laura Ruiz", 1, 2019, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Aritmetica Elemental", "Enrique Torres", 1, 2013, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Operaciones Basicas", "Jose Luis", 1, 2022, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Numeros Enteros", "Raul Caceres", 1, 2021, "Matematica", "Aritmetica"};
+    libros[contador++] = {"Potencias y Raices", "Antonio Chambi", 1, 2018, "Matematica", "Aritmetica"};
 
-    //Matematica - Topologia
-    libros[contador++] = {"Topologia", "James R. Munkres", 2, 2000, "Matematica", "Topologia"};
-    libros[contador++] = {"Elementos de Topologia General", "S. W. Davis", 1, 2005, "Matematica", "Topologia"};
-    libros[contador++] = {"Topologia General", "Stephen Willard", 1, 2004, "Matematica", "Topologia"};
-    libros[contador++] = {"Una Introduccion a la Topologia", "Bert Mendelson", 3, 1990, "Matematica", "Topologia"};
-    libros[contador++] = {"Topologia en Contexto", "Paul L. Shick", 1, 2007, "Matematica", "Topologia"};
-    libros[contador++] = {"Conceptos Basicos de Topologia", "Mark A. Armstrong", 1, 1983, "Matematica", "Topologia"};
-    libros[contador++] = {"Topologia y Geometria", "Glen E. Bredon", 1, 1993, "Matematica", "Topologia"};
+    // Matematica - Estadistica
+    libros[contador++] = {"Estadistica Matematica", "John Freund", 8, 2010, "Matematica", "Estadistica"};
+    libros[contador++] = {"Probabilidad y Estadistica", "Ronald Walpole", 9, 2012, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica Aplicada", "Richard Levin", 7, 1999, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica Inferencial", "Mario Triola", 13, 2018, "Matematica", "Estadistica"};
+    libros[contador++] = {"Introduccion a la Estadistica", "Sheldon Ross", 3, 2010, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica Descriptiva", "Douglas Lind", 17, 2019, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica para Economia", "Paul Newbold", 6, 2006, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica con Excel", "Guillermo Ramirez", 1, 2013, "Matematica", "Estadistica"};
+    libros[contador++] = {"Metodos Estadisticos", "Victor Mendoza", 2, 2018, "Matematica", "Estadistica"};
+    libros[contador++] = {"Estadistica Computacional", "Maria Luque", 1, 2021, "Matematica", "Estadistica"};
+
+    // Matematica - Trigonometria
+    libros[contador++] = {"Trigonometria", "Luis Arana", 1, 2015, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Curso de Trigonometria", "Pedro Poma", 2, 2017, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Trigonometria Plana", "Maria Castro", 1, 2016, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Identidades Trigonometricas", "Jose Rojas", 2, 2019, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Funciones Trigonometricas", "Walter Apaza", 1, 2021, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Trigonometria para Pre", "Ana Salas", 1, 2020, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Triangulos y Angulos", "Oscar Bravo", 1, 2018, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Trigonometria Basica", "Carmen Rios", 1, 2014, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Problemas de Trigonometria", "Enrique Torres", 1, 2019, "Matematica", "Trigonometria"};
+    libros[contador++] = {"Trigonometria Aplicada", "Antonio Lima", 1, 2023, "Matematica", "Trigonometria"};
     
-    //Ciencias - Fisica
-    libros[contador++] = {"Fisica Universitaria", "Sears", 13, 2021, "Ciencias", "Fisica"};
-    libros[contador++] = {"Fisica I", "Luis Antonio Arana", 2, 2019, "Ciencias", "Fisica"};
-    libros[contador++] = {"Problemas de Fisica", "Walter Apaza", 3, 2020, "Ciencias", "Fisica"};
-    libros[contador++] = {"Fisica General", "Julio Silva", 2, 2017, "Ciencias", "Fisica"};
-    libros[contador++] = {"Fisica para Ingenieria", "Carlos Zavala", 1, 2016, "Ciencias", "Fisica"};
-    libros[contador++] = {"Fundamentos de Fisica", "Manuel Ventura", 1, 2015, "Ciencias", "Fisica"};
-    libros[contador++] = {"Ejercicios de Fisica Universitaria", "Jose Cardenas", 1, 2021, "Ciencias", "Fisica"};
+    // Ciencias - Fisica
+    libros[contador++] = {"Fisica Universitaria", "Hugh D. Young", 13, 2012, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fisica Conceptual", "Paul G. Hewitt", 12, 2010, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fundamentos de Fisica", "David Halliday", 10, 2014, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fisica para la Ciencia y la Tecnologia", "Paul Tipler", 6, 2008, "Ciencias", "Fisica"};
+    libros[contador++] = {"Problemas de Fisica General", "I.E. Irodov", 1, 2001, "Ciencias", "Fisica"};
+    libros[contador++] = {"Fisica General", "Pedro Poma", 3, 2016, "Ciencias", "Fisica"};
+    libros[contador++] = {"Mecanica", "Landau y Lifshitz", 4, 1976, "Ciencias", "Fisica"};
+    libros[contador++] = {"Electricidad y Magnetismo", "Edward Purcell", 2, 2013, "Ciencias", "Fisica"};
+    libros[contador++] = {"Termodinamica", "Mark W. Zemansky", 7, 1997, "Ciencias", "Fisica"};
+    libros[contador++] = {"Ondas y Oscilaciones", "Walter Apaza", 1, 2020, "Ciencias", "Fisica"};
 
-    //Ciencias - Quimica
-    libros[contador++] = {"Quimica General", "Zumdahl", 7, 2012, "Ciencias", "Quimica"};
-    libros[contador++] = {"Quimica I", "Luis Antonio Arana", 2, 2018, "Ciencias", "Quimica"};
-    libros[contador++] = {"Problemas de Quimica", "Walter Apaza", 3, 2019, "Ciencias", "Quimica"};
-    libros[contador++] = {"Quimica General", "Julio Silva", 2, 2015, "Ciencias", "Quimica"};
-    libros[contador++] = {"Quimica para Ingenieria", "Carlos Zavala", 1, 2016, "Ciencias", "Quimica"};
-    libros[contador++] = {"Fundamentos de Quimica", "Manuel Ventura", 1, 2017, "Ciencias", "Quimica"};
-    libros[contador++] = {"Ejercicios de Quimica Basica", "Jose Cardenas", 1, 2021, "Ciencias", "Quimica"};
+    // Ciencias - Quimica
+    libros[contador++] = {"Quimica", "Raymond Chang", 12, 2016, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica General", "Ralph H. Petrucci", 11, 2011, "Ciencias", "Quimica"};
+    libros[contador++] = {"Principios de Quimica", "Paula Yurkanis Bruice", 7, 2014, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica Organica", "John McMurry", 9, 2016, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica Inorganica", "Gary L. Miessler", 5, 2014, "Ciencias", "Quimica"};
+    libros[contador++] = {"Problemas Resueltos de Quimica", "Luis Arana", 2, 2015, "Ciencias", "Quimica"};
+    libros[contador++] = {"Laboratorio de Quimica", "Ana Paredes", 1, 2018, "Ciencias", "Quimica"};
+    libros[contador++] = {"Fisicoquimica", "Peter Atkins", 10, 2018, "Ciencias", "Quimica"};
+    libros[contador++] = {"Quimica Analitica", "Douglas Skoog", 9, 2013, "Ciencias", "Quimica"};
+    libros[contador++] = {"Bioquimica", "Jeremy M. Berg", 8, 2016, "Ciencias", "Quimica"};
 
-    //Ciencias - Astronomia
-    libros[contador++] = {"Cosmos", "Carl Sagan", 1, 1980, "Ciencias", "Astronomia"};
-    libros[contador++] = {"Astrophysics for People in a Hurry", "Neil deGrasse Tyson", 1, 2017, "Ciencias", "Astronomia"};
-    libros[contador++] = {"Una Breve Historia de Casi Todo", "Bill Bryson", 1, 2003, "Ciencias", "Astronomia"};
-    libros[contador++] = {"El Universo en una Cascara de Nuez", "Stephen Hawking", 1, 2001, "Ciencias", "Astronomia"};
-    libros[contador++] = {"Pale Blue Dot", "Carl Sagan", 1, 1994, "Ciencias", "Astronomia"};
-    libros[contador++] = {"Los Pilares de la Creacion", "Alan Hirshfeld", 1, 2002, "Ciencias", "Astronomia"};
-    libros[contador++] = {"Historia del Tiempo", "Stephen Hawking", 1, 1988, "Ciencias", "Astronomia"};
-
-    //Ciencias - Biologia
-    libros[contador++] = {"Biologia", "Neil A. Campbell", 11, 2017, "Ciencias", "Biologia"};
+    // Ciencias - Biologia
+    libros[contador++] = {"Biologia", "Neil A. Campbell", 9, 2012, "Ciencias", "Biologia"};
+    libros[contador++] = {"Fundamentos de Biologia", "Solomon Berg", 7, 2010, "Ciencias", "Biologia"};
     libros[contador++] = {"Biologia Celular y Molecular", "Gerald Karp", 8, 2016, "Ciencias", "Biologia"};
-    libros[contador++] = {"El Origen de las Especies", "Charles Darwin", 1, 1859, "Ciencias", "Biologia"};
-    libros[contador++] = {"Genes, Desarrollo y Genomas", "Nancy Hopkins", 1, 2002, "Ciencias", "Biologia"};
-    libros[contador++] = {"Principios de Bioquimica", "Albert L. Lehninger", 7, 2017, "Ciencias", "Biologia"};
-    libros[contador++] = {"La Doble Helice", "James D. Watson", 1, 1968, "Ciencias", "Biologia"};
-    libros[contador++] = {"Microbiologia", "Prescott's", 11, 2020, "Ciencias", "Biologia"};
+    libros[contador++] = {"Anatomia y Fisiologia", "Elaine N. Marieb", 10, 2015, "Ciencias", "Biologia"};
+    libros[contador++] = {"Microbiologia", "Tortora", 11, 2014, "Ciencias", "Biologia"};
+    libros[contador++] = {"Biologia Humana", "Sylvia S. Mader", 9, 2011, "Ciencias", "Biologia"};
+    libros[contador++] = {"Genetica", "William S. Klug", 12, 2015, "Ciencias", "Biologia"};
+    libros[contador++] = {"Botanica", "James D. Mauseth", 5, 2012, "Ciencias", "Biologia"};
+    libros[contador++] = {"Zoologia", "Stephen A. Miller", 9, 2009, "Ciencias", "Biologia"};
+    libros[contador++] = {"Ecologia de Poblaciones", "Walter Apaza", 1, 2020, "Ciencias", "Biologia"};
 
-    //Ciencias - Geologia
-    libros[contador++] = {"Fundamentos de Geologia Fisica", "Arthur N. Strahler", 5, 2011, "Ciencias", "Geologia"};
-    libros[contador++] = {"Geologia Ambiental", "Edward A. Keller", 11, 2019, "Ciencias", "Geologia"};
-    libros[contador++] = {"Geologia General", "Richard Foster Flint", 3, 1983, "Ciencias", "Geologia"};
-    libros[contador++] = {"La Historia de la Tierra", "Robert M. Hazen", 2, 2012, "Ciencias", "Geologia"};
-    libros[contador++] = {"Geologia de Campo", "F.J. Grout", 1, 1971, "Ciencias", "Geologia"};
-    libros[contador++] = {"Introduccion a la Geologia", "Frederick K. Lutgens", 13, 2016, "Ciencias", "Geologia"};
-    libros[contador++] = {"Vulcanologia", "Hans-Ulrich Schmincke", 2, 2004, "Ciencias", "Geologia"};
+    // Ciencias - Astronomia
+    libros[contador++] = {"Astronomia: Una Guia", "Ian Ridpath", 3, 2015, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Cosmos", "Carl Sagan", 1, 1980, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Astrofisica para Gente con Prisa", "Neil deGrasse Tyson", 1, 2017, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Introduccion a la Astronomia", "Pedro Poma", 2, 2016, "Ciencias", "Astronomia"};
+    libros[contador++] = {"El Universo en una Cascara de Nuez", "Stephen Hawking", 1, 2001, "Ciencias", "Astronomia"};
+    libros[contador++] = {"El Gran Diseño", "Stephen Hawking", 1, 2010, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Astronomia Moderna", "Michael Zeilik", 10, 2002, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Observacion Astronomica", "Walter Apaza", 1, 2020, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Guia del Cielo", "Guillermo Abramson", 1, 2018, "Ciencias", "Astronomia"};
+    libros[contador++] = {"Astronomia General", "Luis Arana", 1, 2019, "Ciencias", "Astronomia"};
 
-    //Ciencias - Ecologia
-    libros[contador++] = {"Ecologia: Principios y Aplicaciones", "Manuel C. Molles Jr.", 8, 2018, "Ciencias", "Ecologia"};
-    libros[contador++] = {"Fundamentos de Ecologia", "Eugene P. Odum", 5, 2005, "Ciencias", "Ecologia"};
-    libros[contador++] = {"Ecologia Humana", "Gerald G. Marten", 1, 2001, "Ciencias", "Ecologia"};
-    libros[contador++] = {"Conservacion de la Biodiversidad", "Richard B. Primack", 8, 2018, "Ciencias", "Ecologia"};
-    libros[contador++] = {"Ecologia Urbana", "Marina Alberti", 1, 2008, "Ciencias", "Ecologia"};
-    libros[contador++] = {"Los Limites del Crecimiento", "Donella H. Meadows", 1, 1972, "Ciencias", "Ecologia"};
-    libros[contador++] = {"Principios de Ecologia de Poblaciones", "Thomas M. Smith", 1, 2009, "Ciencias", "Ecologia"};
+    // Ciencias - Ecologia
+    libros[contador++] = {"Ecologia", "Cain, Bowman y Hacker", 3, 2014, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia: De Individuos a Ecosistemas", "Begon, Townsend, Harper", 4, 2006, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Principios de Ecologia", "Walter Apaza", 1, 2019, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia Aplicada", "S. R. Carpenter", 1, 2012, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia Humana", "Paul Shepard", 2, 2001, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia Urbana", "Luis Arana", 1, 2018, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecosistemas y Medio Ambiente", "Carlos Zavala", 2, 2020, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Conservacion de la Naturaleza", "Pedro Poma", 1, 2016, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Ecologia Marina", "James Nybakken", 2, 2001, "Ciencias", "Ecologia"};
+    libros[contador++] = {"Biologia de la Conservacion", "Richard Primack", 3, 2012, "Ciencias", "Ecologia"};
 
-    //Ciencias - Neurociencia
-    libros[contador++] = {"Principios de Neurociencia", "Eric R. Kandel", 5, 2013, "Ciencias", "Neurociencia"};
-    libros[contador++] = {"Neurociencia Cognitiva", "Michael S. Gazzaniga", 5, 2018, "Ciencias", "Neurociencia"};
-    libros[contador++] = {"Fundamentos de Neurociencia", "Dale Purves", 4, 2012, "Ciencias", "Neurociencia"};
-    libros[contador++] = {"La Mente de la Mente", "Oliver Sacks", 1, 2010, "Ciencias", "Neurociencia"};
-    libros[contador++] = {"El Cerebro: La Historia de Usted", "David Eagleman", 1, 2015, "Ciencias", "Neurociencia"};
-    libros[contador++] = {"Neurociencia del Comportamiento", "Marc Breedlove", 8, 2016, "Ciencias", "Neurociencia"};
-    libros[contador++] = {"Introduccion a la Neurociencia", "Dale Purves", 1, 2000, "Ciencias", "Neurociencia"};
-    
-    //Literatura - Peruana
-    libros[contador++] = {"Los rios profundos", "Jose Arguedas", 1, 1958, "Literatura", "Peruana"};
-    libros[contador++] = {"Los rios profundos", "Jose Maria Arguedas", 1, 1958, "Literatura", "Peruana"};
-    libros[contador++] = {"El zorro de arriba y el zorro de abajo", "Jose Maria Arguedas", 1, 1971, "Literatura", "Peruana"};
-    libros[contador++] = {"La ciudad y los perros", "Mario Vargas Llosa", 1, 1963, "Literatura", "Peruana"};
+    // Literatura - Peruana
+    libros[contador++] = {"Los Heraldos Negros", "Cesar Vallejo", 1, 1919, "Literatura", "Peruana"};
+    libros[contador++] = {"La Casa de Carton", "Martin Adan", 1, 1928, "Literatura", "Peruana"};
+    libros[contador++] = {"Redoble por Rancas", "Manuel Scorza", 1, 1970, "Literatura", "Peruana"};
+    libros[contador++] = {"Un Mundo para Julius", "Alfredo Bryce Echenique", 1, 1970, "Literatura", "Peruana"};
+    libros[contador++] = {"La Tia Julia y el Escribidor", "Mario Vargas Llosa", 1, 1977, "Literatura", "Peruana"};
+    libros[contador++] = {"Todas las Sangres", "Jose Maria Arguedas", 1, 1964, "Literatura", "Peruana"};
+    libros[contador++] = {"No me esperen en Abril", "Alfredo Bryce Echenique", 1, 1995, "Literatura", "Peruana"};
+    libros[contador++] = {"El Pez de Oro", "Gamaleon Churata", 1, 1957, "Literatura", "Peruana"};
+    libros[contador++] = {"El Sexto", "Jose Maria Arguedas", 1, 1961, "Literatura", "Peruana"};
     libros[contador++] = {"Conversacion en La Catedral", "Mario Vargas Llosa", 1, 1969, "Literatura", "Peruana"};
-    libros[contador++] = {"Aves sin nido", "Clorinda Matto de Turner", 1, 1889, "Literatura", "Peruana"};
-    libros[contador++] = {"El tungsteno", "Cesar Vallejo", 1, 1931, "Literatura", "Peruana"};
+
+    // Literatura - Latinoamericana
+    libros[contador++] = {"Cien Anos de Soledad", "Gabriel Garcia Marquez", 1, 1967, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"Rayuela", "Julio Cortazar", 1, 1963, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"Pedro Paramo", "Juan Rulfo", 1, 1955, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"La Ciudad y los Perros", "Mario Vargas Llosa", 1, 1963, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"El Tunel", "Ernesto Sabato", 1, 1948, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"La Muerte de Artemio Cruz", "Carlos Fuentes", 1, 1962, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"La Fiesta del Chivo", "Mario Vargas Llosa", 1, 2000, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"Aura", "Carlos Fuentes", 1, 1962, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"Sobre Heroes y Tumbas", "Ernesto Sabato", 1, 1961, "Literatura", "Latinoamericana"};
+    libros[contador++] = {"Doce Cuentos Peregrinos", "Gabriel Garcia Marquez", 1, 1992, "Literatura", "Latinoamericana"};
+
+    // Literatura - Universal
+    libros[contador++] = {"1984", "George Orwell", 1, 1949, "Literatura", "Universal"};
+    libros[contador++] = {"Matar a un Ruisenor", "Harper Lee", 1, 1960, "Literatura", "Universal"};
+    libros[contador++] = {"Crimen y Castigo", "Fiodor Dostoievski", 1, 1866, "Literatura", "Universal"};
+    libros[contador++] = {"Orgullo y Prejuicio", "Jane Austen", 1, 1813, "Literatura", "Universal"};
+    libros[contador++] = {"Don Quijote de la Mancha", "Miguel de Cervantes", 1, 1605, "Literatura", "Universal"};
+    libros[contador++] = {"La Metamorfosis", "Franz Kafka", 1, 1915, "Literatura", "Universal"};
+    libros[contador++] = {"El Principito", "Antoine de Saint-Exupery", 1, 1943, "Literatura", "Universal"};
+    libros[contador++] = {"Fahrenheit 451", "Ray Bradbury", 1, 1953, "Literatura", "Universal"};
+    libros[contador++] = {"Ensayo sobre la Ceguera", "Jose Saramago", 1, 1995, "Literatura", "Universal"};
+    libros[contador++] = {"La Divina Comedia", "Dante Alighieri", 1, 1320, "Literatura", "Universal"};
+
+    // Literatura - Clasica
+    libros[contador++] = {"La Iliada", "Homero", 1, -750, "Literatura", "Clasica"};
+    libros[contador++] = {"La Odisea", "Homero", 1, -700, "Literatura", "Clasica"};
+    libros[contador++] = {"La Eneida", "Virgilio", 1, -19, "Literatura", "Clasica"};
+    libros[contador++] = {"Edipo Rey", "Sofocles", 1, -429, "Literatura", "Clasica"};
+    libros[contador++] = {"Las Metamorfosis", "Ovidio", 1, 8, "Literatura", "Clasica"};
+    libros[contador++] = {"Antigona", "Sofocles", 1, -441, "Literatura", "Clasica"};
+    libros[contador++] = {"Las Nubes", "Aristofanes", 1, -423, "Literatura", "Clasica"};
+    libros[contador++] = {"Prometeo Encadenado", "Esquilo", 1, -460, "Literatura", "Clasica"};
+    libros[contador++] = {"Electra", "Euripides", 1, -413, "Literatura", "Clasica"};
+    libros[contador++] = {"Las Ranas", "Aristofanes", 1, -405, "Literatura", "Clasica"};
+
+    // Literatura - Contemporanea
+    libros[contador++] = {"Kafka en la Orilla", "Haruki Murakami", 1, 2002, "Literatura", "Contemporanea"};
+    libros[contador++] = {"Nunca Me Abandones", "Kazuo Ishiguro", 1, 2005, "Literatura", "Contemporanea"};
+    libros[contador++] = {"Los Detectives Salvajes", "Roberto Bolaño", 1, 1998, "Literatura", "Contemporanea"};
+    libros[contador++] = {"El Nino con el Pijama de Rayas", "John Boyne", 1, 2006, "Literatura", "Contemporanea"};
+    libros[contador++] = {"El Nombre del Viento", "Patrick Rothfuss", 1, 2007, "Literatura", "Contemporanea"};
+    libros[contador++] = {"La Carretera", "Cormac McCarthy", 1, 2006, "Literatura", "Contemporanea"};
+    libros[contador++] = {"El Juego de Ender", "Orson Scott Card", 1, 1985, "Literatura", "Contemporanea"};
+    libros[contador++] = {"La Sombra del Viento", "Carlos Ruiz Zafon", 1, 2001, "Literatura", "Contemporanea"};
+    libros[contador++] = {"El Codigo Da Vinci", "Dan Brown", 1, 2003, "Literatura", "Contemporanea"};
+    libros[contador++] = {"La Ladrona de Libros", "Markus Zusak", 1, 2005, "Literatura", "Contemporanea"};
 
     //Historia - Peruana
     libros[contador++] = {"Breve Historia del Peru", "Franklin Pease G.Y.", 1, 1995, "Historia", "Peruana"};
