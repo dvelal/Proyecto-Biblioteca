@@ -446,6 +446,154 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Aves sin nido", "Clorinda Matto de Turner", 1, 1889, "Literatura", "Peruana"};
     libros[contador++] = {"El tungsteno", "Cesar Vallejo", 1, 1931, "Literatura", "Peruana"};
 
+    //Literatura - Argentina
+    libros[contador++] = {"Ficciones", "Jorge Luis Borges", 1, 1944, "Literatura", "Argentina"};
+    libros[contador++] = {"Rayuela", "Julio Cortazar", 1, 1963, "Literatura", "Argentina"};
+    libros[contador++] = {"El Tunel", "Ernesto Sabato", 1, 1948, "Literatura", "Argentina"};
+    libros[contador++] = {"Martin Fierro", "Jose Hernandez", 1, 1872, "Literatura", "Argentina"};
+    libros[contador++] = {"Adan Buenosayres", "Leopoldo Marechal", 1, 1948, "Literatura", "Argentina"};
+    libros[contador++] = {"Boquitas Pintadas", "Manuel Puig", 1, 1969, "Literatura", "Argentina"};
+
+    //Literatura - Espana
+    libros[contador++] = {"Don Quijote de la Mancha", "Miguel de Cervantes", 1, 1605, "Literatura", "Espana"};
+    libros[contador++] = {"La Sombra del Viento", "Carlos Ruiz Zafon", 1, 2001, "Literatura", "Espana"};
+    libros[contador++] = {"La Casa de Bernarda Alba", "Federico Garcia Lorca", 1, 1936, "Literatura", "Espana"};
+    libros[contador++] = {"Nada", "Carmen Laforet", 1, 1945, "Literatura", "Espana"};
+    libros[contador++] = {"Platero y Yo", "Juan Ramon Jimenez", 1, 1914, "Literatura", "Espana"};
+    libros[contador++] = {"El Lazarillo de Tormes", "Anonimo", 1, 1554, "Literatura", "Espana"};
+
+    //Literatura - Mexico
+    libros[contador++] = {"Pedro Paramo", "Juan Rulfo", 1, 1955, "Literatura", "Mexico"};
+    libros[contador++] = {"Como Agua para Chocolate", "Laura Esquivel", 1, 1989, "Literatura", "Mexico"};
+    libros[contador++] = {"Aura", "Carlos Fuentes", 1, 1962, "Literatura", "Mexico"};
+    libros[contador++] = {"El Laberinto de la Soledad", "Octavio Paz", 1, 1950, "Literatura", "Mexico"};
+    libros[contador++] = {"Los de Abajo", "Mariano Azuela", 1, 1915, "Literatura", "Mexico"};
+    libros[contador++] = {"Balun Canan", "Rosario Castellanos", 1, 1957, "Literatura", "Mexico"};
+
+    //Literatura - Colombia
+    libros[contador++] = {"Cien Anos de Soledad", "Gabriel Garcia Marquez", 1, 1967, "Literatura", "Colombia"};
+    libros[contador++] = {"El Amor en los Tiempos del Colera", "Gabriel Garcia Marquez", 1, 1985, "Literatura", "Colombia"};
+    libros[contador++] = {"La Voragine", "Jose Eustasio Rivera", 1, 1924, "Literatura", "Colombia"};
+    libros[contador++] = {"Cronica de una Muerte Anunciada", "Gabriel Garcia Marquez", 1, 1981, "Literatura", "Colombia"};
+    libros[contador++] = {"Maria", "Jorge Isaacs", 1, 1867, "Literatura", "Colombia"};
+    libros[contador++] = {"El Coronel no tiene quien le escriba", "Gabriel Garcia Marquez", 1, 1961, "Literatura", "Colombia"};
+    libros[contador++] = {"Del Amor y Otros Demonios", "Gabriel Garcia Marquez", 1, 1994, "Literatura", "Colombia"};
+
+    //Literatura - Chile
+    libros[contador++] = {"Veinte Poemas de Amor y una Cancion Desesperada", "Pablo Neruda", 1, 1924, "Literatura", "Chile"};
+    libros[contador++] = {"La Casa de los Espiritus", "Isabel Allende", 1, 1982, "Literatura", "Chile"};
+    libros[contador++] = {"Canto General", "Pablo Neruda", 1, 1950, "Literatura", "Chile"};
+    libros[contador++] = {"El Cartero de Neruda (Ardiente Paciencia)", "Antonio Skarmeta", 1, 1985, "Literatura", "Chile"};
+    libros[contador++] = {"Hijo de Ladron", "Manuel Rojas", 1, 1951, "Literatura", "Chile"};
+    libros[contador++] = {"Nocturno de Chile", "Roberto Bolano", 1, 2000, "Literatura", "Chile"};
+
+    //Literatura - Cuba
+    libros[contador++] = {"El Reino de Este Mundo", "Alejo Carpentier", 1, 1949, "Literatura", "Cuba"};
+    libros[contador++] = {"Tres Tristes Tigres", "Guillermo Cabrera Infante", 1, 1967, "Literatura", "Cuba"};
+    libros[contador++] = {"Paradiso", "Jose Lezama Lima", 1, 1966, "Literatura", "Cuba"};
+    libros[contador++] = {"Cecilia Valdes", "Cirilo Villaverde", 1, 1882, "Literatura", "Cuba"};
+    libros[contador++] = {"La Edad de Oro", "Jose Marti", 1, 1889, "Literatura", "Cuba"};
+    libros[contador++] = {"Memorias del Subdesarrollo", "Edmundo Desnoes", 1, 1965, "Literatura", "Cuba"};
+    libros[contador++] = {"Antes que Anochezca", "Reinaldo Arenas", 1, 1992, "Literatura", "Cuba"};
+
+    //Historia - Peruana
+    libros[contador++] = {"Breve Historia del Peru", "Franklin Pease G.Y.", 1, 1995, "Historia", "Peruana"};
+    libros[contador++] = {"Los Incas: Reyes del Sol", "Victor W. von Hagen", 1, 1961, "Historia", "Peruana"};
+    libros[contador++] = {"La Guerra del Pacifico", "Jorge Basadre Grohmann", 1, 1946, "Historia", "Peruana"};
+    libros[contador++] = {"Historia de la Republica del Peru", "Jorge Basadre Grohmann", 11, 2005, "Historia", "Peruana"};
+    libros[contador++] = {"El Conflicto Armado Interno en Peru", "CVR", 1, 2003, "Historia", "Peruana"};
+
+    //Historia - Universal
+    libros[contador++] = {"Sapiens: De Animales a Dioses", "Yuval Noah Harari", 1, 2014, "Historia", "Universal"};
+    libros[contador++] = {"Una Breve Historia del Mundo", "Ernst Gombrich", 1, 1935, "Historia", "Universal"};
+    libros[contador++] = {"Armas, Germenes y Acero", "Jared Diamond", 1, 1997, "Historia", "Universal"};
+    libros[contador++] = {"Historia Universal", "H.G. Wells", 1, 1920, "Historia", "Universal"};
+    libros[contador++] = {"La Historia del Mundo en Cien Objetos", "Neil MacGregor", 1, 2010, "Historia", "Universal"};
+
+    //Historia - Antigua
+    libros[contador++] = {"Historia de Roma", "Mary Beard", 1, 2015, "Historia", "Antigua"};
+    libros[contador++] = {"El Antiguo Egipto", "Toby Wilkinson", 1, 2010, "Historia", "Antigua"};
+    libros[contador++] = {"Los Griegos", "H.D.F. Kitto", 1, 1951, "Historia", "Antigua"};
+    libros[contador++] = {"El Cercano Oriente Antiguo", "Marc Van De Mieroop", 2, 2016, "Historia", "Antigua"};
+    libros[contador++] = {"La Guerra del Peloponeso", "Tucidides", 1, -431, "Historia", "Antigua"};
+
+    //Historia - Moderna
+    libros[contador++] = {"El Siglo de las Luces", "Alejo Carpentier", 1, 1962, "Historia", "Moderna"};
+    libros[contador++] = {"La Revolucion Francesa", "Michel Vovelle", 1, 1993, "Historia", "Moderna"};
+    libros[contador++] = {"Historia de la Revolucion Rusa", "Leon Trotsky", 1, 1930, "Historia", "Moderna"};
+    libros[contador++] = {"La Era de las Revoluciones", "Eric Hobsbawm", 1, 1962, "Historia", "Moderna"};
+    libros[contador++] = {"El Mundo de Ayer", "Stefan Zweig", 1, 1942, "Historia", "Moderna"};
+
+    //Historia - Contemporanea
+    libros[contador++] = {"El Fin de la Historia y el Ultimo Hombre", "Francis Fukuyama", 1, 1992, "Historia", "Contemporanea"};
+    libros[contador++] = {"La Era de los Extremos", "Eric Hobsbawm", 1, 1994, "Historia", "Contemporanea"};
+    libros[contador++] = {"Los Origenes de la Segunda Guerra Mundial", "A.J.P. Taylor", 1, 1961, "Historia", "Contemporanea"};
+    libros[contador++] = {"Guerra y Paz", "Leon Tolstoi", 1, 1869, "Historia", "Contemporanea"};
+    libros[contador++] = {"Un Mundo Feliz", "Aldous Huxley", 1, 1932, "Historia", "Contemporanea"};
+
+    //Filosofia - Etica
+    libros[contador++] = {"Etica a Nicomaco", "Aristoteles", 1, -340, "Filosofia", "Etica"};
+    libros[contador++] = {"Fundamentacion de la Metafisica de las Costumbres", "Immanuel Kant", 1, 1785, "Filosofia", "Etica"};
+    libros[contador++] = {"Utilitarismo", "John Stuart Mill", 1, 1861, "Filosofia", "Etica"};
+    libros[contador++] = {"Asi Hablo Zaratustra", "Friedrich Nietzsche", 1, 1883, "Filosofia", "Etica"};
+    libros[contador++] = {"Sobre la Libertad", "John Stuart Mill", 1, 1859, "Filosofia", "Etica"};
+
+    //Filosofia - Logica
+    libros[contador++] = {"Logica", "Irving M. Copi", 14, 2011, "Filosofia", "Logica"};
+    libros[contador++] = {"Introduccion a la Logica", "Alfred Tarski", 1, 1941, "Filosofia", "Logica"};
+    libros[contador++] = {"Principia Mathematica", "Bertrand Russell", 1, 1910, "Filosofia", "Logica"};
+    libros[contador++] = {"Investigaciones Filosoficas", "Ludwig Wittgenstein", 1, 1953, "Filosofia", "Logica"};
+    libros[contador++] = {"El Organon", "Aristoteles", 1, -350, "Filosofia", "Logica"};
+
+    //Filosofia - Metafisica
+    libros[contador++] = {"Metafisica", "Aristoteles", 1, -350, "Filosofia", "Metafisica"};
+    libros[contador++] = {"Critica de la Razon Pura", "Immanuel Kant", 1, 1781, "Filosofia", "Metafisica"};
+    libros[contador++] = {"Ser y Tiempo", "Martin Heidegger", 1, 1927, "Filosofia", "Metafisica"};
+    libros[contador++] = {"El Mundo como Voluntad y Representacion", "Arthur Schopenhauer", 1, 1818, "Filosofia", "Metafisica"};
+    libros[contador++] = {"Discurso del Metodo", "Rene Descartes", 1, 1637, "Filosofia", "Metafisica"};
+
+    //Filosofia - Epistemologia
+    libros[contador++] = {"Investigacion sobre el Entendimiento Humano", "David Hume", 1, 1748, "Filosofia", "Epistemologia"};
+    libros[contador++] = {"El Conocimiento Humano", "Bertrand Russell", 1, 1948, "Filosofia", "Epistemologia"};
+    libros[contador++] = {"Logica de la Investigacion Cientifica", "Karl Popper", 1, 1934, "Filosofia", "Epistemologia"};
+    libros[contador++] = {"Estructura de las Revoluciones Cientificas", "Thomas S. Kuhn", 1, 1962, "Filosofia", "Epistemologia"};
+    libros[contador++] = {"Teoria del Conocimiento", "Johannes Hessen", 1, 1926, "Filosofia", "Epistemologia"};
+
+    //Computacion - Programacion
+    libros[contador++] = {"Principios de Programacion con C++", "Bjarne Stroustrup", 2, 2014, "Computacion", "Programacion"};
+    libros[contador++] = {"Clean Code: A Handbook of Agile Software Craftsmanship", "Robert C. Martin", 1, 2008, "Computacion", "Programacion"};
+    libros[contador++] = {"Code Complete", "Steve McConnell", 2, 2004, "Computacion", "Programacion"};
+    libros[contador++] = {"Python Crash Course", "Eric Matthes", 2, 2019, "Computacion", "Programacion"};
+    libros[contador++] = {"Refactoring: Improving the Design of Existing Code", "Martin Fowler", 2, 2018, "Computacion", "Programacion"};
+
+    //Computacion - Algoritmos
+    libros[contador++] = {"Introduccion a los Algoritmos", "Thomas H. Cormen", 4, 2022, "Computacion", "Algoritmos"};
+    libros[contador++] = {"Algoritmos", "Robert Sedgewick", 4, 2011, "Computacion", "Algoritmos"};
+    libros[contador++] = {"La Estructura y la Interpretacion de los Programas de Computadora", "Harold Abelson", 2, 1996, "Computacion", "Algoritmos"};
+    libros[contador++] = {"The Art of Computer Programming, Vol. 1: Fundamental Algorithms", "Donald Knuth", 3, 1997, "Computacion", "Algoritmos"};
+    libros[contador++] = {"Algoritmos y Estructuras de Datos", "Niklaus Wirth", 1, 1986, "Computacion", "Algoritmos"};
+
+    //Computacion - Redes
+    libros[contador++] = {"Redes de Computadoras", "Andrew S. Tanenbaum", 5, 2011, "Computacion", "Redes"};
+    libros[contador++] = {"TCP/IP Illustrated, Vol. 1: The Protocols", "W. Richard Stevens", 1, 1993, "Computacion", "Redes"};
+    libros[contador++] = {"CompTIA Network+ Study Guide", "Todd Lammle", 5, 2021, "Computacion", "Redes"};
+    libros[contador++] = {"Interconexiones de Redes con TCP/IP Volumen 1", "Douglas E. Comer", 6, 2013, "Computacion", "Redes"};
+    libros[contador++] = {"Cisco CCNA Routing and Switching Official Cert Guide", "Wendell Odom", 2, 2013, "Computacion", "Redes"};
+
+    //Computacion - Inteligencia Artificial
+    libros[contador++] = {"Inteligencia Artificial: Un Enfoque Moderno", "Stuart Russell", 4, 2020, "Computacion", "Inteligencia Artificial"};
+    libros[contador++] = {"Aprendizaje Automatico", "Tom M. Mitchell", 1, 1997, "Computacion", "Inteligencia Artificial"};
+    libros[contador++] = {"Deep Learning", "Ian Goodfellow", 1, 2016, "Computacion", "Inteligencia Artificial"};
+    libros[contador++] = {"Programacion de la Inteligencia Artificial en Python", "Peter Norvig", 3, 2009, "Computacion", "Inteligencia Artificial"};
+    libros[contador++] = {"Redes Neuronales y Aprendizaje Profundo", "Michael Nielsen", 1, 2015, "Computacion", "Inteligencia Artificial"};
+
+    //Computacion - Bases de Datos
+    libros[contador++] = {"Fundamentos de Sistemas de Bases de Datos", "Elmasri & Navathe", 7, 2015, "Computacion", "Bases de Datos"};
+    libros[contador++] = {"SQL para Dummies", "Allen G. Taylor", 9, 2017, "Computacion", "Bases de Datos"};
+    libros[contador++] = {"Database System Concepts", "Abraham Silberschatz", 7, 2019, "Computacion", "Bases de Datos"};
+    libros[contador++] = {"Diseño de Bases de Datos Relacionales", "C.J. Date", 4, 2000, "Computacion", "Bases de Datos"};
+    libros[contador++] = {"NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence", "Pramod J. Sadalage", 1, 2012, "Computacion", "Bases de Datos"};
+
     // Economia - Microeconomia
     libros[contador++] = {"Principios de microeconomia", "Rosa Salazar", 1, 2018, "Economia", "Microeconomia"};
     libros[contador++] = {"Microeconomia intermedia", "Luis Camargo", 2, 2019, "Economia", "Microeconomia"};
