@@ -192,28 +192,28 @@ int main() {
 void mostrarLibros(Libro libros[], int cantidad) {
     cout << "\nLista de libros registrados:\n";
     cout << left
-         << setw(40) << "Titulo"
+         << setw(60) << "Titulo"
          << setw(30) << "Autor"
          << setw(10) << "Edicion"
-         << setw(10)  << "Anio"
+         << setw(10) << "Anio"
          << setw(12) << "Categoria"
-         << setw(15) << "Subcategoria" 
+         << setw(30) << "Subcategoria" 
          << setw(15) << "Estado" << endl;
 
-    cout << string(132, '-') << endl;
+    cout << string(167, '-') << endl;
 
     for (int i = 0; i < cantidad; i++) {
         cout << left
-             << setw(40) << libros[i].titulo
+             << setw(60) << libros[i].titulo
              << setw(30) << libros[i].autor
              << setw(10) << libros[i].edicion
-             << setw(10)  << libros[i].anio
+             << setw(10) << libros[i].anio
              << setw(12) << libros[i].categoria
-             << setw(15) << libros[i].subcategoria;
+             << setw(30) << libros[i].subcategoria;
         if (libros[i].estado == "disponible")
-            cout << setw(15) << azul << libros[i].estado << reset << endl;
+            cout << left << setw(15) << azul << libros[i].estado << reset << endl;
         else
-            cout << setw(15) << rojo << libros[i].estado << reset << endl;
+            cout << left << setw(15) << rojo << libros[i].estado << reset << endl;
     }
 }
 
@@ -347,18 +347,8 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Teoria y Practica de Algebra", "Jose Rojas", 2, 2018, "Matematica", "Algebra"};
     libros[contador++] = {"Algebra Basica para pre", "Jorge Pineda", 1, 2016, "Matematica", "Algebra"};
 
-    //Matematica - Algebra Lineal
-    libros[contador++] = {"Algebra Lineal con Aplicaciones", "David C. Lay", 5, 2016, "Matematica", "Algebra Lineal"};
-    libros[contador++] = {"Introduccion al Algebra Lineal", "Gilbert Strang", 4, 2009, "Matematica", "Algebra Lineal"};
-    libros[contador++] = {"Algebra Lineal", "Kenneth Hoffman", 2, 1971, "Matematica", "Algebra Lineal"};
-    libros[contador++] = {"Algebra Lineal y Geometria", "Manuel Palacios", 1, 2018, "Matematica", "Algebra Lineal"};
-    libros[contador++] = {"Fundamentos de Algebra Lineal", "Ron Larson", 7, 2013, "Matematica", "Algebra Lineal"};
-    libros[contador++] = {"Algebra Lineal Elemental", "Howard Anton", 11, 2013, "Matematica", "Algebra Lineal"};
-    libros[contador++] = {"Un Curso de Algebra Lineal", "David S. Dummit", 3, 2004, "Matematica", "Algebra Lineal"};
-
     //Matematica - Ecuaciones Diferenciales
     libros[contador++] = {"Ecuaciones Diferenciales con Aplicaciones de Modelado", "Dennis G. Zill", 11, 2018, "Matematica", "Ecuaciones Diferenciales"};
-    libros[contador++] = {"Ecuaciones Diferenciales Elementales y Problemas de Valores en la Frontera", "William E. Boyce", 11, 2017, "Matematica", "Ecuaciones Diferenciales"};
     libros[contador++] = {"Curso de Ecuaciones Diferenciales", "Richard C. DiPrima", 7, 2012, "Matematica", "Ecuaciones Diferenciales"};
     libros[contador++] = {"Introduccion a las Ecuaciones Diferenciales", "Serge Lang", 1, 1990, "Matematica", "Ecuaciones Diferenciales"};
     libros[contador++] = {"Ecuaciones Diferenciales Aplicadas", "Murray R. Spiegel", 3, 2004, "Matematica", "Ecuaciones Diferenciales"};
@@ -374,14 +364,14 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Principios de Estadistica", "W.C. Scheaffer", 3, 2009, "Matematica", "Estadistica"};
     libros[contador++] = {"Estadistica Aplicada a los Negocios y la Economia", "Douglas A. Lind", 17, 2019, "Matematica", "Estadistica"};
 
-    //Matematica - Geometria Diferencial
-    libros[contador++] = {"Geometria Diferencial de Curvas y Superficies", "Manfredo P. do Carmo", 2, 2016, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Introduccion a la Geometria Diferencial", "Andrew Pressley", 2, 2010, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Geometria Diferencial", "Michael Spivak", 3, 1999, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Notas de Geometria Diferencial", "Oscar Garcia-Prada", 1, 2005, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria Diferencial"};
+    //Matematica - Geometria 
+    libros[contador++] = {"Geometria Diferencial de Curvas y Superficies", "Manfredo P. do Carmo", 2, 2016, "Matematica", "Geometria"};
+    libros[contador++] = {"Introduccion a la Geometria Diferencial", "Andrew Pressley", 2, 2010, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Diferencial", "Michael Spivak", 3, 1999, "Matematica", "Geometria"};
+    libros[contador++] = {"Notas de Geometria Diferencial", "Oscar Garcia-Prada", 1, 2005, "Matematica", "Geometria"};
+    libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria"};
+    libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria"};
 
     //Matematica - Teoria de Numeros
     libros[contador++] = {"Introduccion a la Teoria de Numeros", "David M. Burton", 7, 2012, "Matematica", "Teoria de Numeros"};
@@ -472,5 +462,55 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Conversacion en La Catedral", "Mario Vargas Llosa", 1, 1969, "Literatura", "Peruana"};
     libros[contador++] = {"Aves sin nido", "Clorinda Matto de Turner", 1, 1889, "Literatura", "Peruana"};
     libros[contador++] = {"El tungsteno", "Cesar Vallejo", 1, 1931, "Literatura", "Peruana"};
+
+    // Literatura - Argentina
+    libros[contador++] = {"Ficciones", "Jorge Luis Borges", 1, 1944, "Literatura", "Argentina"};
+    libros[contador++] = {"Rayuela", "Julio Cortazar", 1, 1963, "Literatura", "Argentina"};
+    libros[contador++] = {"El Tunel", "Ernesto Sabato", 1, 1948, "Literatura", "Argentina"};
+    libros[contador++] = {"Martin Fierro", "Jose Hernandez", 1, 1872, "Literatura", "Argentina"};
+    libros[contador++] = {"Adan Buenosayres", "Leopoldo Marechal", 1, 1948, "Literatura", "Argentina"};
+    libros[contador++] = {"Boquitas Pintadas", "Manuel Puig", 1, 1969, "Literatura", "Argentina"};
+
+    // Literatura - Espana
+    libros[contador++] = {"Don Quijote de la Mancha", "Miguel de Cervantes", 1, 1605, "Literatura", "Espana"};
+    libros[contador++] = {"La Sombra del Viento", "Carlos Ruiz Zafon", 1, 2001, "Literatura", "Espana"};
+    libros[contador++] = {"La Casa de Bernarda Alba", "Federico Garcia Lorca", 1, 1936, "Literatura", "Espana"};
+    libros[contador++] = {"Nada", "Carmen Laforet", 1, 1945, "Literatura", "Espana"};
+    libros[contador++] = {"Platero y Yo", "Juan Ramon Jimenez", 1, 1914, "Literatura", "Espana"};
+    libros[contador++] = {"El Lazarillo de Tormes", "Anonimo", 1, 1554, "Literatura", "Espana"};
+
+    // Literatura - Mexico
+    libros[contador++] = {"Pedro Paramo", "Juan Rulfo", 1, 1955, "Literatura", "Mexico"};
+    libros[contador++] = {"Como Agua para Chocolate", "Laura Esquivel", 1, 1989, "Literatura", "Mexico"};
+    libros[contador++] = {"Aura", "Carlos Fuentes", 1, 1962, "Literatura", "Mexico"};
+    libros[contador++] = {"El Laberinto de la Soledad", "Octavio Paz", 1, 1950, "Literatura", "Mexico"};
+    libros[contador++] = {"Los de Abajo", "Mariano Azuela", 1, 1915, "Literatura", "Mexico"};
+    libros[contador++] = {"Balun Canan", "Rosario Castellanos", 1, 1957, "Literatura", "Mexico"};
+
+    // Literatura - Colombia
+    libros[contador++] = {"Cien Anos de Soledad", "Gabriel Garcia Marquez", 1, 1967, "Literatura", "Colombia"};
+    libros[contador++] = {"El Amor en los Tiempos del Colera", "Gabriel Garcia Marquez", 1, 1985, "Literatura", "Colombia"};
+    libros[contador++] = {"La Voragine", "Jose Eustasio Rivera", 1, 1924, "Literatura", "Colombia"};
+    libros[contador++] = {"Cronica de una Muerte Anunciada", "Gabriel Garcia Marquez", 1, 1981, "Literatura", "Colombia"};
+    libros[contador++] = {"Maria", "Jorge Isaacs", 1, 1867, "Literatura", "Colombia"};
+    libros[contador++] = {"El Coronel no tiene quien le escriba", "Gabriel Garcia Marquez", 1, 1961, "Literatura", "Colombia"};
+    libros[contador++] = {"Del Amor y Otros Demonios", "Gabriel Garcia Marquez", 1, 1994, "Literatura", "Colombia"};
+
+    // Literatura - Chile
+    libros[contador++] = {"Veinte Poemas de Amor y una Cancion Desesperada", "Pablo Neruda", 1, 1924, "Literatura", "Chile"};
+    libros[contador++] = {"La Casa de los Espiritus", "Isabel Allende", 1, 1982, "Literatura", "Chile"};
+    libros[contador++] = {"Canto General", "Pablo Neruda", 1, 1950, "Literatura", "Chile"};
+    libros[contador++] = {"El Cartero de Neruda (Ardiente Paciencia)", "Antonio Skarmeta", 1, 1985, "Literatura", "Chile"};
+    libros[contador++] = {"Hijo de Ladron", "Manuel Rojas", 1, 1951, "Literatura", "Chile"};
+    libros[contador++] = {"Nocturno de Chile", "Roberto Bolano", 1, 2000, "Literatura", "Chile"};
+
+    // Literatura - Cuba
+    libros[contador++] = {"El Reino de Este Mundo", "Alejo Carpentier", 1, 1949, "Literatura", "Cuba"};
+    libros[contador++] = {"Tres Tristes Tigres", "Guillermo Cabrera Infante", 1, 1967, "Literatura", "Cuba"};
+    libros[contador++] = {"Paradiso", "Jose Lezama Lima", 1, 1966, "Literatura", "Cuba"};
+    libros[contador++] = {"Cecilia Valdes", "Cirilo Villaverde", 1, 1882, "Literatura", "Cuba"};
+    libros[contador++] = {"La Edad de Oro", "Jose Marti", 1, 1889, "Literatura", "Cuba"};
+    libros[contador++] = {"Memorias del Subdesarrollo", "Edmundo Desnoes", 1, 1965, "Literatura", "Cuba"};
+    libros[contador++] = {"Antes que Anochezca", "Reinaldo Arenas", 1, 1992, "Literatura", "Cuba"};
 
 }
