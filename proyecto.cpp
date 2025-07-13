@@ -9,6 +9,7 @@ using namespace std;
 string amarillo = "\033[1;33m";
 string verde = "\033[0;32m";
 string rojo = "\033[0;31m";
+string azul = "\033[0;34m";
 string reset = "\033[0m";
 
 struct Cliente{
@@ -48,6 +49,7 @@ void devolverLibro(Libro[], int, string, string, int);
 void cargarLibrosPredefinidos(Libro[], int &);
 
 int main() {
+    srand(time(0));  
     Libro libros[1000];
     Cliente cliente[1000];
     int contadorLibros = 0;
@@ -195,10 +197,10 @@ void mostrarLibros(Libro libros[], int cantidad) {
          << setw(10) << "Edicion"
          << setw(10) << "Anio"
          << setw(12) << "Categoria"
-         << setw(25) << "Subcategoria" 
+         << setw(30) << "Subcategoria" 
          << setw(15) << "Estado" << endl;
 
-    cout << string(132, '-') << endl;
+    cout << string(167, '-') << endl;
 
     for (int i = 0; i < cantidad; i++) {
         cout << left
@@ -207,8 +209,11 @@ void mostrarLibros(Libro libros[], int cantidad) {
              << setw(10) << libros[i].edicion
              << setw(10) << libros[i].anio
              << setw(12) << libros[i].categoria
-             << setw(25) << libros[i].subcategoria 
-             << setw(15) << libros[i].estado << endl;
+             << setw(30) << libros[i].subcategoria;
+        if (libros[i].estado == "disponible")
+            cout << left << setw(15) << azul << libros[i].estado << reset << endl;
+        else
+            cout << left << setw(15) << rojo << libros[i].estado << reset << endl;
     }
 }
 
@@ -247,7 +252,7 @@ void imprimelibro(Libro &l){
     cout << "Autor: " << l.autor << endl;
     cout << "Edicion: " << l.edicion << endl;
     cout << "Anio: " << l.anio << endl;
-    cout << "Estado: " << l.estado << endl;
+    cout << "Estado: " << azul << l.estado << reset << endl;
     cout << "Categoria: " << l.categoria << endl;
     cout << "Subcategoria: " << l.subcategoria << endl; 
 }
@@ -359,14 +364,14 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Principios de Estadistica", "W.C. Scheaffer", 3, 2009, "Matematica", "Estadistica"};
     libros[contador++] = {"Estadistica Aplicada a los Negocios y la Economia", "Douglas A. Lind", 17, 2019, "Matematica", "Estadistica"};
 
-    //Matematica - Geometria Diferencial
-    libros[contador++] = {"Geometria Diferencial de Curvas y Superficies", "Manfredo P. do Carmo", 2, 2016, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Introduccion a la Geometria Diferencial", "Andrew Pressley", 2, 2010, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Geometria Diferencial", "Michael Spivak", 3, 1999, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Notas de Geometria Diferencial", "Oscar Garcia-Prada", 1, 2005, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria Diferencial"};
-    libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria Diferencial"};
+    //Matematica - Geometria 
+    libros[contador++] = {"Geometria Diferencial de Curvas y Superficies", "Manfredo P. do Carmo", 2, 2016, "Matematica", "Geometria"};
+    libros[contador++] = {"Introduccion a la Geometria Diferencial", "Andrew Pressley", 2, 2010, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Diferencial", "Michael Spivak", 3, 1999, "Matematica", "Geometria"};
+    libros[contador++] = {"Notas de Geometria Diferencial", "Oscar Garcia-Prada", 1, 2005, "Matematica", "Geometria"};
+    libros[contador++] = {"Fundamentos de Geometria Diferencial", "Sigurdur Helgason", 2, 2001, "Matematica", "Geometria"};
+    libros[contador++] = {"Un Curso en Geometria Diferencial", "W.P. Ziemer", 1, 2009, "Matematica", "Geometria"};
+    libros[contador++] = {"Geometria Diferencial: Curvas y Superficies", "Antonio Fernandez", 1, 2010, "Matematica", "Geometria"};
 
     //Matematica - Teoria de Numeros
     libros[contador++] = {"Introduccion a la Teoria de Numeros", "David M. Burton", 7, 2012, "Matematica", "Teoria de Numeros"};
