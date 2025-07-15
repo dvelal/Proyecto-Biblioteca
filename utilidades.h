@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+// Declara una variable externa (definida en otro lugar).
 extern string amarillo;
 extern string verde;
 extern string rojo;
