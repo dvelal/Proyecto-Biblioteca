@@ -62,6 +62,8 @@ int main() {
     cargarLibrosPredefinidos(libros, contadorLibros);
 
     do {
+        limpiarPantalla();
+
         cout << "\n--- Biblioteca Virtual ---\n";
         cout << "1. Buscar libro\n";
         cout << "2. Agregar un libro\n";
@@ -83,20 +85,20 @@ int main() {
                 cin >> subop;
                 cin.ignore();
                 if (subop == 1){
-                cout << "Ingrese el titulo del libro a buscar: ";
-                getline(cin, titulo);  
-                cout << "Ingrese el autor del libro a buscar: ";
-                getline(cin, autor);
-                buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
-                pausar();
+                    cout << "Ingrese el titulo del libro a buscar: ";
+                    getline(cin, titulo);  
+                    cout << "Ingrese el autor del libro a buscar: ";
+                    getline(cin, autor);
+                    buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
+                    pausar();
                 }
                 else if (subop == 2){
-                cout << "\nSeleccione una Categoria: ";
-                getline(cin, cate);
-                cout << "\nSeleccione una Subcategoria: ";
-                getline(cin, subcate);
-                buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor); 
-                pausar();   
+                    cout << "\nSeleccione una Categoria: ";
+                    getline(cin, cate);
+                    cout << "\nSeleccione una Subcategoria: ";
+                    getline(cin, subcate);
+                    buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor); 
+                    pausar();   
                 }
                 break;
             }
@@ -192,7 +194,7 @@ int main() {
 void mostrarLibros(Libro libros[], int cantidad) {
     cout << "\nLista de libros registrados:\n";
     cout << left
-         << setw(60) << "Titulo"
+         << setw(80) << "Titulo"
          << setw(30) << "Autor"
          << setw(10) << "Edicion"
          << setw(10) << "Anio"
@@ -200,11 +202,11 @@ void mostrarLibros(Libro libros[], int cantidad) {
          << setw(23) << "Subcategoria" 
          << setw(15) << "Estado" << endl;
 
-    cout << string(167, '-') << endl;
+    cout << string(177, '-') << endl;
 
     for (int i = 0; i < cantidad; i++) {
         cout << left
-             << setw(60) << libros[i].titulo
+             << setw(80) << libros[i].titulo
              << setw(30) << libros[i].autor
              << setw(10) << libros[i].edicion
              << setw(10) << libros[i].anio
@@ -252,7 +254,10 @@ void imprimelibro(Libro &l){
     cout << "Autor: " << l.autor << endl;
     cout << "Edicion: " << l.edicion << endl;
     cout << "Anio: " << l.anio << endl;
-    cout << "Estado: " << azul << l.estado << reset << endl;
+    if (l.estado == "disponible")
+        cout << "Estado: " << azul << l.estado << reset << endl;
+    else
+        cout << "Estado: " << rojo << l.estado << reset << endl;
     cout << "Categoria: " << l.categoria << endl;
     cout << "Subcategoria: " << l.subcategoria << endl; 
 }
@@ -606,11 +611,11 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Cisco CCNA Routing and Switching Official Cert Guide", "Wendell Odom", 2, 2013, "Computacion", "Redes"};
 
     //Computacion - Inteligencia Artificial
-    libros[contador++] = {"Inteligencia Artificial: Un Enfoque Moderno", "Stuart Russell", 4, 2020, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Aprendizaje Automatico", "Tom M. Mitchell", 1, 1997, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Deep Learning", "Ian Goodfellow", 1, 2016, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Programacion de la Inteligencia Artificial en Python", "Peter Norvig", 3, 2009, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Redes Neuronales y Aprendizaje Profundo", "Michael Nielsen", 1, 2015, "Computacion", "Inteligencia Artificial"};
+    libros[contador++] = {"Inteligencia Artificial: Un Enfoque Moderno", "Stuart Russell", 4, 2020, "Computacion", "IA"};
+    libros[contador++] = {"Aprendizaje Automatico", "Tom M. Mitchell", 1, 1997, "Computacion", "IA"};
+    libros[contador++] = {"Deep Learning", "Ian Goodfellow", 1, 2016, "Computacion", "IA"};
+    libros[contador++] = {"Programacion de la Inteligencia Artificial en Python", "Peter Norvig", 3, 2009, "Computacion", "IA"};
+    libros[contador++] = {"Redes Neuronales y Aprendizaje Profundo", "Michael Nielsen", 1, 2015, "Computacion", "IA"};
 
     //Computacion - Bases de Datos
     libros[contador++] = {"Fundamentos de Sistemas de Bases de Datos", "Elmasri & Navathe", 7, 2015, "Computacion", "Bases de Datos"};
