@@ -20,6 +20,7 @@ struct Libro {
     int codigo_seguridad = 0;
 };
 
+// Funciones
 void mostrarCategorias(Libro [], int);
 void mostrarSubcategorias(Libro [], int, string);
 void mostrarLibros(Libro[], int);

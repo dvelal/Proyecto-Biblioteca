@@ -1,5 +1,6 @@
 #include"libros.h"
 
+// Permite usar la lista de inicialización {} para llenar los campos de una estructura en el mismo orden en que fueron definidos.
 void cargarLibrosPredefinidos(Libro libros[], int &contador) {
 
     // Matematica - Calculo
@@ -187,8 +188,8 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     //Computacion - Algoritmos
     libros[contador++] = {"Introduccion a los Algoritmos", "Thomas H. Cormen", 4, 2022, "Computacion", "Algoritmos"};
     libros[contador++] = {"Algoritmos", "Robert Sedgewick", 4, 2011, "Computacion", "Algoritmos"};
-    libros[contador++] = {"La Estructura y la Interpretacion de los Programas de Computadora", "Harold Abelson", 2, 1996, "Computacion", "Algoritmos"};
-    libros[contador++] = {"The Art of Computer Programming, Vol. 1: Fundamental Algorithms", "Donald Knuth", 3, 1997, "Computacion", "Algoritmos"};
+    libros[contador++] = {"Algoritmos y estructuras de datos", "Víctor R. Torres Soto", 2, 2018, "Computacion", "Algoritmos"};
+    libros[contador++] = {"Fundamentos de algoritmos", "César A. Gonzales Rengifo", 1, 2021, "Computacion", "Algoritmos"};
     libros[contador++] = {"Algoritmos y Estructuras de Datos", "Niklaus Wirth", 1, 1986, "Computacion", "Algoritmos"};
 
     //Computacion - Redes
