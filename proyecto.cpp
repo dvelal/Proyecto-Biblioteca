@@ -1,23 +1,33 @@
+// Para entrada y salida estándar (cout, cin)
 #include <iostream>
+// Para trabajar con cadenas de texto 
 #include <string>
+// Generar números aleatorios
 #include <ctime> 
+// Colocar colores
 #include <windows.h>
 #include <iomanip>
+#include <set>
 #include "utilidades.h"
 using namespace std;
 
+// Códigos para utilizar los colores de la libreria windows.h
 string amarillo = "\033[1;33m";
 string verde = "\033[0;32m";
 string rojo = "\033[0;31m";
 string azul = "\033[0;34m";
+string magenta = "\033[0;35m";
+string cian = "\033[1;36m";
 string reset = "\033[0m";
 
+// Estructura Cliente
 struct Cliente{
     string nombre;
     int edad;
     int dni;
 };
 
+// Estructura Libro
 struct Libro {
     string titulo;
     string autor;
@@ -30,8 +40,13 @@ struct Libro {
     int codigo_seguridad = 0;
 };
 
+// Función para mostrar las categorias y subcategorias de los libros 
+void mostrarCategoriasYSubcategorias(Libro[], int);
+
+// Función para mostrar los libros 
 void mostrarLibros(Libro[], int);
 
+// Función para buscar un libro en la biblioteca 
 void buscarLibro(Libro[], int, int, string, string, string, string);
 
 void leerLibro(Libro &, string, string, int, int, string, string);
@@ -62,15 +77,18 @@ int main() {
     cargarLibrosPredefinidos(libros, contadorLibros);
 
     do {
-        cout << "\n--- Biblioteca Virtual ---\n";
-        cout << "1. Buscar libro\n";
-        cout << "2. Agregar un libro\n";
-        cout << "3. Mostrar libros\n";
-        cout << "4. Prestar un libro\n";
-        cout << "5. Devolver un libro\n";
-        cout << "0. Salir\n";
-        cout << "Seleccione una opcion: ";
-        cin >> op;
+        cout << magenta << "===============================\n" << reset;
+        cout << azul << "     BIBLIOTECA VIRTUAL\n" << reset;
+        cout << magenta << "===============================\n" << reset;
+
+        cout << rojo << "  [1] " <<  reset << "Buscar libro\n";
+        cout << rojo << "  [2] "<< reset << "Agregar un libro\n";
+        cout << rojo << "  [3] " << reset << "Mostrar libros\n";
+        cout << rojo << "  [4] " << reset << "Prestar un libro\n";
+        cout << rojo << "  [5] " << reset << "Devolver un libro\n";
+        cout << rojo << "  [0] " << reset << "Salir\n";
+
+        cout << "\nSeleccione una opcion: "; cin >> op;
         cin.ignore(); 
         
         limpiarPantalla();
@@ -79,90 +97,96 @@ int main() {
             case 1: {
                 cout << "\n1. Buscar por titulo y autor\n";
                 cout << "2. Buscar por categoria y subcategoria\n";
-                cout << "Seleccione una opcion: ";
-                cin >> subop;
+                cout << "Seleccione una opcion: "; cin >> subop;
                 cin.ignore();
-                if (subop == 1){
-                cout << "Ingrese el titulo del libro a buscar: ";
-                getline(cin, titulo);  
-                cout << "Ingrese el autor del libro a buscar: ";
-                getline(cin, autor);
-                buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
-                pausar();
-                }
-                else if (subop == 2){
-                cout << "\nSeleccione una Categoria: ";
-                getline(cin, cate);
-                cout << "\nSeleccione una Subcategoria: ";
-                getline(cin, subcate);
-                buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor); 
-                pausar();   
+                switch (subop){
+                    case 1:{
+                        cout << "Ingrese el titulo del libro a buscar: "; getline(cin, titulo);  
+                        cout << "Ingrese el autor del libro a buscar: "; getline(cin, autor);
+
+                        buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
+
+                        pausar();
+                        break;
+                    }
+
+                    case 2:{
+                        mostrarCategoriasYSubcategorias(libros, contadorLibros);
+    
+                        cout << "\nIngrese la CATEGORIA exacta: "; getline(cin, cate);
+                        cout << "Ingrese la SUBCATEGORIA exacta: "; getline(cin, subcate);
+
+                        limpiarPantalla();
+
+                        buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor); 
+
+                        pausar();  
+                        break; 
+                    }
+                    default:
+                        cout << "No existe la opcion elegida"<< endl;
+                        pausar();
+                        break;
                 }
                 break;
             }
 
             case 2: {
-                cout << "Titulo del libro: ";
-                getline(cin, titulo);
-                cout << "Autor: ";
-                getline(cin, autor);
-                cout << "Edicion: ";
-                cin >> edicion;
+                cout << "Titulo del libro: "; getline(cin, titulo);
+                cout << "Autor: "; getline(cin, autor);
+                cout << "Edicion: "; cin >> edicion;
                 cin.ignore();
-                cout << "Anio: ";
-                cin >> anio;
+                cout << "Anio: "; cin >> anio;
                 cin.ignore();
-                cout << "Categoria: ";
-                cin >> cate;
+                cout << "Categoria: "; cin >> cate;
                 cin.ignore();
-                cout << "Subcategoria: ";
-                cin >> subcate;
+                cout << "Subcategoria: "; cin >> subcate;
 
                 leerLibro(libros[contadorLibros], titulo, autor, edicion, anio, cate, subcate);
+
                 contadorLibros++;
                 cout << verde << "Libro agregado con exito.\n" << reset;
+
                 pausar();
                 break;
             }
 
             case 3: {
                 mostrarLibros(libros, contadorLibros);
+
                 pausar();
                 break;
             }
 
             case 4: {
                 cout << "-------------------------------------Ingresa los datos del libro----------------------------------------------" << endl;
-                cout << "Titulo del libro a prestar: ";
-                getline(cin, titulo);
-                cout << "Autor: ";
-                getline(cin, autor);
+                cout << "Titulo del libro a prestar: "; getline(cin, titulo);
+                cout << "Autor: "; getline(cin, autor);
                 cout << "----------------------------------------Ingresa tus datos personales----------------------------------------- " << endl;
-                cout << "Ingresa tu nombre (Primer nombre y apellido): ";
-                getline(cin, nombre);
-                cout << "Ingresa tu edad: ";
-                cin >> edad;
+                cout << "Ingresa tu nombre (Primer nombre y apellido): "; getline(cin, nombre);
+                cout << "Ingresa tu edad: "; cin >> edad;
                 cin.ignore();
-                cout << "Ingresa tu DNI: ";
-                cin >> dni;
+                cout << "Ingresa tu DNI: "; cin >> dni;
                 cin.ignore();
+
                 leercliente(cliente[contadorcliente], nombre, edad, dni);
+
                 contadorcliente++;
+
                 prestarLibro(libros, contadorLibros, titulo, autor, dni);
+
                 pausar();
                 break;
             }
             case 5: {
                 cout << "-------------------------------------Datos del libro a devolver----------------------------------------------\n";
-                cout << "Titulo del libro: ";
-                getline(cin, titulo);
-                cout << "Autor: ";
-                getline(cin, autor);
-
-                cout << "Ingresa tu DNI: ";
-                cin >> dni;
+                cout << "Titulo del libro: "; getline(cin, titulo);
+                cout << "Autor: "; getline(cin, autor);
+                cout << "Ingresa tu DNI: "; cin >> dni;
                 cin.ignore();
+
                 devolverLibro(libros, contadorLibros, titulo, autor, dni);
+
                 pausar();
                 break;
             }
@@ -181,9 +205,12 @@ int main() {
 
             default:
                 cout << rojo << "Opcion invalida." << reset << endl;
+
                 pausar();
         }
+
         limpiarPantalla();
+
     } while (op != 0);
 
     return 0;
@@ -214,6 +241,44 @@ void mostrarLibros(Libro libros[], int cantidad) {
                 cout << left << setw(15) << azul << libros[i].estado << reset << endl;
             else
                 cout << left << setw(15) << rojo << libros[i].estado << reset << endl;
+    }
+}
+
+void mostrarCategoriasYSubcategorias(Libro libros[], int cantidad) {
+    cout << "Categorias y Subcategorias disponibles:\n";
+
+    set<string> mostradas;
+
+    for (int i = 0; i < cantidad; i++) {
+        string clave = libros[i].categoria + " > " + libros[i].subcategoria;
+        if (mostradas.find(clave) == mostradas.end()) {
+
+            // Color por categoría
+            string color;
+            if (libros[i].categoria == "Matematica")
+                color = azul;
+            else if (libros[i].categoria == "Ciencias")
+                color = rojo;
+            else if (libros[i].categoria == "Literatura")
+                color = verde;
+            else if (libros[i].categoria == "Historia")
+                color = magenta;
+            else if (libros[i].categoria == "Filosofia")
+                color = amarillo;
+            else if (libros[i].categoria == "Computacion")
+                color = azul;
+            else if (libros[i].categoria == "Economia")
+                color = rojo;
+            else if (libros[i].categoria == "Ingenieria")
+                color = verde;
+            else if (libros[i].categoria == "Medicina")
+                color = magenta;
+            else 
+                color = azul;
+
+            cout << " - " << color << libros[i].categoria << reset << " > " << cian << libros[i].subcategoria << reset << endl;
+            mostradas.insert(clave);
+        }
     }
 }
 
@@ -287,7 +352,7 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni
             else {
                 libros[i].estado = "prestado";
                 libros[i].dni_cliente = dni;
-                libros[i].codigo_seguridad = rand() % 9000 + 1000; 
+                libros[i].codigo_seguridad = rand() % 9999 + 1000; 
                 cout << verde << "Libro prestado con exito al cliente con DNI: " << dni << reset << endl;
                 cout << "Codigo de seguridad del prestamo: " << libros[i].codigo_seguridad << endl;
             }
@@ -605,12 +670,12 @@ void cargarLibrosPredefinidos(Libro libros[], int &contador) {
     libros[contador++] = {"Interconexiones de Redes con TCP/IP Volumen 1", "Douglas E. Comer", 6, 2013, "Computacion", "Redes"};
     libros[contador++] = {"Cisco CCNA Routing and Switching Official Cert Guide", "Wendell Odom", 2, 2013, "Computacion", "Redes"};
 
-    //Computacion - Inteligencia Artificial
-    libros[contador++] = {"Inteligencia Artificial: Un Enfoque Moderno", "Stuart Russell", 4, 2020, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Aprendizaje Automatico", "Tom M. Mitchell", 1, 1997, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Deep Learning", "Ian Goodfellow", 1, 2016, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Programacion de la Inteligencia Artificial en Python", "Peter Norvig", 3, 2009, "Computacion", "Inteligencia Artificial"};
-    libros[contador++] = {"Redes Neuronales y Aprendizaje Profundo", "Michael Nielsen", 1, 2015, "Computacion", "Inteligencia Artificial"};
+    //Computacion - IA
+    libros[contador++] = {"Inteligencia Artificial: Un Enfoque Moderno", "Stuart Russell", 4, 2020, "Computacion", "IA"};
+    libros[contador++] = {"Aprendizaje Automatico", "Tom M. Mitchell", 1, 1997, "Computacion", "IA"};
+    libros[contador++] = {"Deep Learning", "Ian Goodfellow", 1, 2016, "Computacion", "IA"};
+    libros[contador++] = {"Programacion de la Inteligencia Artificial en Python", "Peter Norvig", 3, 2009, "Computacion", "IA"};
+    libros[contador++] = {"Redes Neuronales y Aprendizaje Profundo", "Michael Nielsen", 1, 2015, "Computacion", "IA"};
 
     //Computacion - Bases de Datos
     libros[contador++] = {"Fundamentos de Sistemas de Bases de Datos", "Elmasri & Navathe", 7, 2015, "Computacion", "Bases de Datos"};
