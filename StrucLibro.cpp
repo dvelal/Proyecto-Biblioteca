@@ -51,11 +51,11 @@ void mostrarLibros(Libro libros[], int cantidad) {
         << setw(30) << "Autor"         // imprime "Autor" con 30 espacios
         << setw(10) << "Edicion"       // imprime "Edicion" con 10 espacios
         << setw(10) << "Anio"          // "Anio" con 10 espacios
-        << setw(12) << "Categoria"     // "Categoria" con 12 espacios
+        << setw(20) << "Categoria"     // "Categoria" con 20 espacios
         << setw(23) << "Subcategoria"  // "Subcategoria" con 23 espacios
         << setw(15) << "Estado" << endl; // "Estado" con 15 espacios
 
-    cout << string(157, '-') << endl;
+    cout << string(165, '-') << endl;
 
     for (int i = 0; i < cantidad; i++) {
         cout << left
@@ -63,7 +63,7 @@ void mostrarLibros(Libro libros[], int cantidad) {
              << setw(30) << libros[i].autor
              << setw(10) << libros[i].edicion
              << setw(10) << libros[i].anio
-             << setw(12) << libros[i].categoria
+             << setw(20) << libros[i].categoria
              << setw(15) << libros[i].subcategoria;
             if (libros[i].estado == "disponible")
                 cout << left << setw(15) << azul << libros[i].estado << reset << endl;
@@ -98,7 +98,7 @@ void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string
             }
         }
         if (!encontra) {
-            cout << rojo << "No hay libros encontrados" << reset;
+            cout << rojo << "No hay libros encontrados" << reset << endl;
         }
     }
 }
