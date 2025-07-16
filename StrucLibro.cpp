@@ -6,7 +6,6 @@
 using namespace std;
 
 void mostrarCategorias(Libro libros[], int cantidad) {
-    bool encontrado = false;
     cout << amarillo << "\n|| Categorias disponibles:||\n" << reset;
     for (int i = 0; i < cantidad; i++) {
         bool repetido = false;
@@ -103,6 +102,7 @@ void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string
     }
 }
 
+
 void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio, string cate, string subcate) {
     l.titulo = titulo;
     l.autor = autor;
@@ -121,8 +121,8 @@ void imprimelibro(Libro &l){
         cout << "Estado: " << azul << l.estado << reset << endl;
     else
         cout << "Estado: " << rojo << l.estado << reset << endl;
-        cout << "Categoria: " << l.categoria << endl;
-        cout << "Subcategoria: " << l.subcategoria << endl; 
+    cout << "Categoria: " << l.categoria << endl;
+    cout << "Subcategoria: " << l.subcategoria << endl; 
 }
 
 void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni) {
@@ -134,7 +134,7 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni
             else {
                 libros[i].estado = "prestado";
                 libros[i].dni_cliente = dni;
-                libros[i].codigo_seguridad = rand() % 9999 + 1000; 
+                libros[i].codigo_seguridad = rand() % 9000 + 1000; 
                 cout << verde << "Libro prestado con exito al cliente con DNI: " << dni << reset << endl;
                 cout << cian << "Codigo de seguridad del prestamo: " << reset << libros[i].codigo_seguridad << endl;
             }

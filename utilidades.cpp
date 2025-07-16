@@ -13,11 +13,7 @@ string cian = "\033[1;36m";
 string reset = "\033[0m";
 
 void limpiarPantalla() {
-#ifdef _WIN32
     system("cls");
-#else
-    system("clear");
-#endif
 }
 
 void pausar() {

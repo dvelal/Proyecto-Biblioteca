@@ -45,6 +45,7 @@ int main() {
                 cout << rojo << "\n1. " << azul << "Buscar por titulo y autor\n" << reset;
                 cout << rojo << "2. " <<  azul << "Buscar por categoria y subcategoria\n" << reset;
                 cout << "||" << amarillo << "Seleccione una opcion: " << reset << "||"<< endl; cin >> subop;
+                // Descartar los carácteres (enter)
                 cin.ignore();
                 switch (subop){
                     case 1:{
