@@ -7,7 +7,7 @@ using namespace std;
 
 void mostrarCategorias(Libro libros[], int cantidad) {
     bool encontrado = false;
-    cout << "\nCategorias disponibles:\n";
+    cout << amarillo << "\n|| Categorias disponibles:||\n" << reset;
     for (int i = 0; i < cantidad; i++) {
         bool repetido = false;
         for (int j = 0; j < i; j++) {
@@ -24,7 +24,7 @@ void mostrarCategorias(Libro libros[], int cantidad) {
 
 void mostrarSubcategorias(Libro libros[], int cantidad, string categoria) {
     bool encontrado = false;
-    cout << "\nSubcategorias en " << categoria << ":\n";
+    cout << amarillo << "\n|| Subcategorias en " << categoria << ": ||\n" << reset;
     for (int i = 0; i < cantidad; i++) {
         if (libros[i].categoria == categoria) {
             bool repetido = false;
@@ -43,25 +43,27 @@ void mostrarSubcategorias(Libro libros[], int cantidad, string categoria) {
 }
 
 void mostrarLibros(Libro libros[], int cantidad) {
-    cout << "\nLista de libros registrados:\n";
+    cout << amarillo << "\n || Lista de libros registrados: || \n" << reset;
+    cout << endl;
+    // El texto se alinea a la izquierda 
     cout << left
-         << setw(80) << "Titulo"
-         << setw(30) << "Autor"
-         << setw(10) << "Edicion"
-         << setw(10) << "Anio"
-         << setw(12) << "Categoria"
-         << setw(23) << "Subcategoria" 
-         << setw(15) << "Estado" << endl;
+        << setw(60) << "Titulo"        // imprime "Titulo" con 60 espacios de ancho
+        << setw(30) << "Autor"         // imprime "Autor" con 30 espacios
+        << setw(10) << "Edicion"       // imprime "Edicion" con 10 espacios
+        << setw(10) << "Anio"          // "Anio" con 10 espacios
+        << setw(20) << "Categoria"     // "Categoria" con 20 espacios
+        << setw(23) << "Subcategoria"  // "Subcategoria" con 23 espacios
+        << setw(15) << "Estado" << endl; // "Estado" con 15 espacios
 
-    cout << string(177, '-') << endl;
+    cout << string(165, '-') << endl;
 
     for (int i = 0; i < cantidad; i++) {
         cout << left
-             << setw(80) << libros[i].titulo
+             << setw(60) << libros[i].titulo 
              << setw(30) << libros[i].autor
              << setw(10) << libros[i].edicion
              << setw(10) << libros[i].anio
-             << setw(12) << libros[i].categoria
+             << setw(20) << libros[i].categoria
              << setw(15) << libros[i].subcategoria;
             if (libros[i].estado == "disponible")
                 cout << left << setw(15) << azul << libros[i].estado << reset << endl;
@@ -87,7 +89,7 @@ void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string
     }
 
     if (elegir == 2){
-        cout << "\nLibros encontrados:\n";
+        cout << amarillo << "\n|| Libros encontrados: ||\n" << reset;
         for (int i = 0; i < cant; i++) {
             if (libros[i].categoria == categoria && libros[i].subcategoria == subcategoria) {
                 imprimelibro(libros[i]);
@@ -96,7 +98,7 @@ void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string
             }
         }
         if (!encontra) {
-            cout << "No hay libros encontrados";
+            cout << rojo << "No hay libros encontrados" << reset << endl;
         }
     }
 }
@@ -119,8 +121,8 @@ void imprimelibro(Libro &l){
         cout << "Estado: " << azul << l.estado << reset << endl;
     else
         cout << "Estado: " << rojo << l.estado << reset << endl;
-    cout << "Categoria: " << l.categoria << endl;
-    cout << "Subcategoria: " << l.subcategoria << endl; 
+        cout << "Categoria: " << l.categoria << endl;
+        cout << "Subcategoria: " << l.subcategoria << endl; 
 }
 
 void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni) {
@@ -134,7 +136,7 @@ void prestarLibro(Libro libros[], int cant, string titulo, string autor, int dni
                 libros[i].dni_cliente = dni;
                 libros[i].codigo_seguridad = rand() % 9999 + 1000; 
                 cout << verde << "Libro prestado con exito al cliente con DNI: " << dni << reset << endl;
-                cout << "Codigo de seguridad del prestamo: " << libros[i].codigo_seguridad << endl;
+                cout << cian << "Codigo de seguridad del prestamo: " << reset << libros[i].codigo_seguridad << endl;
             }
             return;
         }
@@ -166,3 +168,4 @@ void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dn
     }
     cout << rojo << "Libro no encontrado.\n" << reset;
 }
+

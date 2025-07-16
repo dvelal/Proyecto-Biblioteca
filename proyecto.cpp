@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+    // Libreria Ctime
     srand(time(0));  
     Libro libros[1000];
     Cliente cliente[1000];
@@ -32,23 +33,24 @@ int main() {
         cout << rojo << "  [3] " << reset << "Mostrar libros\n";
         cout << rojo << "  [4] " << reset << "Prestar un libro\n";
         cout << rojo << "  [5] " << reset << "Devolver un libro\n";
+        cout << rojo << "  [6] " << reset << "Libros Alquilados\n";
         cout << rojo << "  [0] " << reset << "Salir\n";
 
-        cout << "\nSeleccione una opcion: "; cin >> op;
+        cout << amarillo << "\nSeleccione una opcion: " << reset; cin >> op;
         cin.ignore(); 
         
         limpiarPantalla();
 
         switch (op) {
             case 1: {
-                cout << "\n1. Buscar por titulo y autor\n";
-                cout << "2. Buscar por categoria y subcategoria\n";
-                cout << "Seleccione una opcion: "; cin >> subop;
+                cout << rojo << "\n1. " << azul << "Buscar por titulo y autor\n" << reset;
+                cout << rojo << "2. " <<  azul << "Buscar por categoria y subcategoria\n" << reset;
+                cout << "||" << amarillo << "Seleccione una opcion: " << reset << "||"<< endl; cin >> subop;
                 cin.ignore();
                 switch (subop){
                     case 1:{
-                        cout << "Ingrese el titulo del libro a buscar: "; getline(cin, titulo);  
-                        cout << "Ingrese el autor del libro a buscar: "; getline(cin, autor);
+                        cout <<  verde << "Ingrese el titulo del libro a buscar: " << reset; getline(cin, titulo);  
+                        cout << verde << "Ingrese el autor del libro a buscar: " << reset; getline(cin, autor);
 
                         buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
 
@@ -58,9 +60,9 @@ int main() {
 
                     case 2:{
                         mostrarCategorias(libros, contadorLibros);
-                        cout << "\nIngrese la CATEGORIA exacta: "; getline(cin, cate);
+                        cout << verde << "\nIngrese la CATEGORIA exacta: " << reset; getline(cin, cate);
                         mostrarSubcategorias(libros, contadorLibros, cate);
-                        cout << "\nIngrese la SUBCATEGORIA exacta: "; getline(cin, subcate);
+                        cout << verde << "\nIngrese la SUBCATEGORIA exacta: " << reset; getline(cin, subcate);
 
                         limpiarPantalla();
 
@@ -70,7 +72,7 @@ int main() {
                         break; 
                     }
                     default:
-                        cout << "No existe la opcion elegida"<< endl;
+                        cout << rojo << "No existe la opcion elegida"<< reset << endl;
                         pausar();
                         break;
                 }
@@ -78,15 +80,15 @@ int main() {
             }
 
             case 2: {
-                cout << "Titulo del libro: "; getline(cin, titulo);
-                cout << "Autor: "; getline(cin, autor);
-                cout << "Edicion: "; cin >> edicion;
+                cout << magenta << "Titulo del libro: " << reset; getline(cin, titulo);
+                cout << cian << "Autor: " << reset; getline(cin, autor);
+                cout << magenta << "Edicion: " << reset; cin >> edicion;
                 cin.ignore();
-                cout << "Anio: "; cin >> anio;
+                cout << cian << "Anio: " << reset; cin >> anio;
                 cin.ignore();
-                cout << "Categoria: "; cin >> cate;
+                cout << magenta << "Categoria: " << reset; cin >> cate;
                 cin.ignore();
-                cout << "Subcategoria: "; cin >> subcate;
+                cout << cian << "Subcategoria: " << reset; cin >> subcate;
 
                 leerLibro(libros[contadorLibros], titulo, autor, edicion, anio, cate, subcate);
 
@@ -105,14 +107,15 @@ int main() {
             }
 
             case 4: {
-                cout << "-------------------------------------Ingresa los datos del libro----------------------------------------------" << endl;
-                cout << "Titulo del libro a prestar: "; getline(cin, titulo);
-                cout << "Autor: "; getline(cin, autor);
-                cout << "----------------------------------------Ingresa tus datos personales----------------------------------------- " << endl;
-                cout << "Ingresa tu nombre (Primer nombre y apellido): "; getline(cin, nombre);
-                cout << "Ingresa tu edad: "; cin >> edad;
+                mostrarLibros(libros,contadorLibros); 
+                cout << amarillo << " || Ingresa los datos del libro ||" << reset << endl;
+                cout << azul << "Titulo: " << reset; getline(cin, titulo);
+                cout << azul << "Autor: " << reset; getline(cin, autor);
+                cout << amarillo << " || Ingresa tus datos personales|| " << reset << endl;
+                cout << azul << "Ingresa tu nombre (Primer nombre y apellido): " << reset; getline(cin, nombre);
+                cout << azul << "Ingresa tu edad: " << reset; cin >> edad;
                 cin.ignore();
-                cout << "Ingresa tu DNI: "; cin >> dni;
+                cout << azul << "Ingresa tu DNI: " << reset; cin >> dni;
                 cin.ignore();
 
                 leercliente(cliente[contadorcliente], nombre, edad, dni);
@@ -125,22 +128,31 @@ int main() {
                 break;
             }
             case 5: {
-                cout << "-------------------------------------Datos del libro a devolver----------------------------------------------\n";
-                cout << "Titulo del libro: "; getline(cin, titulo);
-                cout << "Autor del libro: "; getline(cin, autor);
-                cout << "DNI del cliente: "; cin >> dni;
-                cout << "Codigo de seguridad del prestamo: "; cin >> codigo;
+                cout << "----------------------------------------------" << endl;
+                cout << amarillo << "Datos del libro a devolver\n" << reset;
+                cout << "----------------------------------------------" << endl;
+                cout << azul << "Titulo del libro: " << reset; getline(cin, titulo);
+                cout << azul << "Autor del libro: " << reset; getline(cin, autor);
+                cout << azul << "DNI del cliente: " << reset; cin >> dni;
+                cout << verde << "Codigo de seguridad del prestamo: " << reset; cin >> codigo;
 
                 devolverLibro(libros, contadorLibros, titulo, autor, dni, codigo);
 
                 pausar();
                 break;
             }
+
+            case 6: {
+                mostrarClientes(cliente, libros, contadorcliente);
+                pausar();
+                break;
+            }
             case 0:
-                cout << "¿Seguro que desea salir (S/N)? "; cin >> op1;
+                cout << rojo << "¿Seguro que desea salir (S/N)? " << reset; cin >> op1;
                 switch (op1){
                     case 'S':
-                    cout << "Saliendo del programa...\n";
+                    cout << verde << "Saliendo del programa...\n" << reset;
+                    pausar();
                     break;
                     case 'N':
                     op++;
