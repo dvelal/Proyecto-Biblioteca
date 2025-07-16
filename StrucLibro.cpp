@@ -168,3 +168,4 @@ void devolverLibro(Libro libros[], int cant, string titulo, string autor, int dn
     }
     cout << rojo << "Libro no encontrado.\n" << reset;
 }
+
