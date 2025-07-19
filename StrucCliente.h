@@ -5,15 +5,15 @@
 #include "struclibro.h"
 using namespace std;
 
-// Estructura Cliente
-struct Cliente{
+// Estructura del cliente
+struct Cliente {
     string nombre;
     int edad;
     int dni;
 };
 
-void leercliente(Cliente &, string, int, int);
-void imprimecliente(Cliente &);
-void mostrarClientes(Cliente [], Libro [], int);
+bool leercliente(Cliente &, Cliente [], string, int, int, int);
+void imprimecliente(const Cliente &);
+void mostrarClientes(Cliente [], Libro [], int, int);
 
 #endif
