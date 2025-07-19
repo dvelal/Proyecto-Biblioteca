@@ -33,7 +33,6 @@ int main() {
         cout << rojo << "  [3] " << reset << "Mostrar libros\n";
         cout << rojo << "  [4] " << reset << "Prestar un libro\n";
         cout << rojo << "  [5] " << reset << "Devolver un libro\n";
-        cout << rojo << "  [6] " << reset << "Libros Alquilados\n";
         cout << rojo << "  [0] " << reset << "Salir\n";
 
         cout << amarillo << "\nSeleccione una opcion: " << reset; cin >> op;
@@ -139,12 +138,6 @@ int main() {
 
                 devolverLibro(libros, contadorLibros, titulo, autor, dni, codigo);
 
-                pausar();
-                break;
-            }
-
-            case 6: {
-                mostrarClientes(cliente, libros, contadorcliente);
                 pausar();
                 break;
             }
