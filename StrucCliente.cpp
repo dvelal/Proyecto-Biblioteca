@@ -18,14 +18,12 @@ bool leercliente(Cliente &c, Cliente clientes[], string nombre, int edad, int dn
     c.dni = dni;
     for (int i = 0; i < cantidad; i++) {
         if (clientes[i].dni == c.dni) {
-        cout << rojo << "\nEl DNI ya esta registrado. Intente con otro.\n" << reset;
-        c.dni = -1;
-        return false;
-        }
-        if (clientes[i].nombre == c.nombre) {
-        cout << rojo << "\nEl nombre ya existe. Intente con otro.\n" << reset;
-        c.nombre = "";
-        return false;
+            if (clientes[i].nombre != c.nombre) {
+                cout << rojo << "\nYa existe un cliente con el mismo DNI. Intente con otro.\n" << reset;
+                c.nombre = "";
+                c.dni = -1;
+                return false;
+            }
         }
     }
     return true;
