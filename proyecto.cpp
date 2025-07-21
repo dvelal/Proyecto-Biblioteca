@@ -48,8 +48,9 @@ int main() {
 
         switch (op) {
             case 1: {
-                cout << rojo << "\n1. " << azul << "Buscar por titulo y autor\n" << reset;
-                cout << rojo << "2. " << azul << "Buscar por categoria y subcategoria\n" << reset;
+                cout << rojo << "\n1. " << azul << "Buscar por autor\n" << reset;
+                cout << rojo << "2. " << azul << "Buscar por titulo\n" << reset;
+                cout << rojo << "3. " << azul << "Buscar por categoria y subcategoria\n" << reset;
                 cout << amarillo << "Seleccione una opcion: " << reset;
                 cin >> subop;
                 if (!validarEntradaNumerica()) {
@@ -60,11 +61,14 @@ int main() {
                 cin.ignore();
                 switch (subop) {
                     case 1:
-                        solicitarDato(verde + string("Ingrese el titulo del libro: ") + reset, titulo);
                         solicitarDato(verde + string("Ingrese el autor del libro: ") + reset, autor);
                         buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
                         break;
                     case 2:
+                        solicitarDato(verde + string("Ingrese el titulo del libro: ") + reset, titulo);
+                        buscarLibro(libros, contadorLibros, subop, cate, subcate, titulo, autor);
+                        break;
+                    case 3:
                         mostrarCategorias(libros, contadorLibros);
                         solicitarDato(verde + string("\nIngrese la CATEGORIA exacta: ") + reset, cate);
                         mostrarSubcategorias(libros, contadorLibros, cate);
@@ -109,12 +113,11 @@ int main() {
                 pausar();
                 break;
             }
-
-            case 3:
+            case 3:{
                 mostrarLibros(libros, contadorLibros);
                 pausar();
                 break;
-
+            }
             case 4:  {
                 mostrarLibros(libros, contadorLibros);
     
@@ -199,7 +202,7 @@ int main() {
                 break;
                 }
             case 0: {
-                cout << rojo << "¿Seguro que desea salir (S/N)? " << reset;
+                cout << rojo << "¿Seguro que desea salir (S/N)? " << reset; 
                 cin >> op1;
                 op1 = toupper(op1);
                 if (op1 == 'S') {

@@ -80,8 +80,9 @@ void mostrarSubcategorias(Libro libros[], int cantidad, string categoria) {
 void buscarLibro(Libro libros[], int cantidad, int modo, string cate, string subcate, string titulo, string autor) {
     bool encontrado = false;
     for (int i = 0; i < cantidad; i++) {
-        if ((modo == 1 && libros[i].titulo == titulo && libros[i].autor == autor) ||
-            (modo == 2 && libros[i].categoria == cate && libros[i].subcategoria == subcate)) {
+        if ((modo == 1 && libros[i].autor == autor) ||
+            (modo == 2 && libros[i].titulo == titulo) ||
+            (modo == 3 && libros[i].categoria == cate && libros[i].subcategoria == subcate)) {
             imprimelibro(libros[i]);
             encontrado = true;
         }
