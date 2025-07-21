@@ -9,6 +9,7 @@ using namespace std;
 
 // Estructura Libro
 struct Libro {
+    int cod;
     string titulo;
     string autor;
     int edicion;

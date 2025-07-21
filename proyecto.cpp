@@ -50,6 +50,7 @@ int main() {
                 cin.ignore();
                 switch (subop){
                     case 1:{
+                        imprimelibro(libros);
                         cout <<  verde << "Ingrese el titulo del libro a buscar: " << reset; getline(cin, titulo);  
                         cout << verde << "Ingrese el autor del libro a buscar: " << reset; getline(cin, autor);
 
@@ -112,7 +113,7 @@ int main() {
                 cout << amarillo << " || Ingresa los datos del libro ||" << reset << endl;
                 cout << azul << "Titulo: " << reset; getline(cin, titulo);
                 cout << azul << "Autor: " << reset; getline(cin, autor);
-                imprimelibro()
+                imprimelibro(libros);
                 cout << amarillo << " || Ingresa tus datos personales|| " << reset << endl;
                 cout << azul << "Ingresa tu nombre (Primer nombre y apellido): " << reset; getline(cin, nombre);
                 cout << azul << "Ingresa tu edad: " << reset; cin >> edad;
@@ -144,6 +145,8 @@ int main() {
                 break;
             }
             case 6: {
+                mostrarClientes(cliente, libros, contadorcliente, contadorLibros);
+                pausar();
                 break;
             }
             case 0:

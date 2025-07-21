@@ -46,6 +46,7 @@ void mostrarLibros(Libro libros[], int cantidad) {
     cout << endl;
     // El texto se alinea a la izquierda 
     cout << left
+        << setw(8) << "Codigo"         // imprime "Codigo" con 8 espacios de ancho
         << setw(60) << "Titulo"        // imprime "Titulo" con 60 espacios de ancho
         << setw(30) << "Autor"         // imprime "Autor" con 30 espacios
         << setw(10) << "Edicion"       // imprime "Edicion" con 10 espacios
@@ -54,16 +55,17 @@ void mostrarLibros(Libro libros[], int cantidad) {
         << setw(23) << "Subcategoria"  // "Subcategoria" con 23 espacios
         << setw(15) << "Estado" << endl; // "Estado" con 15 espacios
 
-    cout << string(165, '-') << endl;
+    cout << string(170, '-') << endl;
 
     for (int i = 0; i < cantidad; i++) {
         cout << left
-             << setw(60) << libros[i].titulo 
-             << setw(30) << libros[i].autor
-             << setw(10) << libros[i].edicion
-             << setw(10) << libros[i].anio
-             << setw(20) << libros[i].categoria
-             << setw(15) << libros[i].subcategoria;
+            << setw(8) << libros[i].cod
+            << setw(60) << libros[i].titulo 
+            << setw(30) << libros[i].autor
+            << setw(10) << libros[i].edicion
+            << setw(10) << libros[i].anio
+            << setw(20) << libros[i].categoria
+            << setw(15) << libros[i].subcategoria;
             if (libros[i].estado == "disponible")
                 cout << left << setw(15) << azul << libros[i].estado << reset << endl;
             else
@@ -103,7 +105,8 @@ void buscarLibro(Libro libros[], int cant, int elegir , string categoria, string
 }
 
 
-void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio, string cate, string subcate) {
+void leerLibro(Libro &l, int codigo, string titulo, string autor, int edicion, int anio, string cate, string subcate) {
+    l.cod = codigo;
     l.titulo = titulo;
     l.autor = autor;
     l.edicion = edicion;
@@ -113,6 +116,7 @@ void leerLibro(Libro &l, string titulo, string autor, int edicion, int anio, str
 }
 
 void imprimelibro(Libro &l){
+    cout << "Codigo: " << l.cod << endl;
     cout << "Libro: " << l.titulo << endl;
     cout << "Autor: " << l.autor << endl;
     cout << "Edicion: " << l.edicion << endl;
