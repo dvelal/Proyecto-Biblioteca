@@ -15,5 +15,7 @@ extern string reset;
 
 void limpiarPantalla();
 void pausar();
+bool validarEntradaNumerica();
+void solicitarDato(const string& mensaje, string& variable);
 
 #endif
