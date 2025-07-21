@@ -2,33 +2,32 @@
 #define STRUCLIBRO_H
 
 #include <string>
-#include <iostream>
-#include <iomanip>
-#include "utilidades.h"
 using namespace std;
 
-// Estructura Libro
+// Estructura del libro
 struct Libro {
-    int cod;
+    int id;                 // ID unico del libro
     string titulo;
     string autor;
     int edicion;
     int anio;
     string categoria;
     string subcategoria;
-    string estado = "disponible"; 
-    int dni_cliente; 
-    int codigo_seguridad = 0;
+    string estado = "disponible";  // disponible o prestado
+    int dni_cliente = 0;           // DNI del cliente si esta prestado
+    int codigo_seguridad = 0;      // codigo aleatorio de prestamo
 };
 
 // Funciones
+void leerLibro(Libro &, int, string, string, int, int, string, string);
+void imprimelibro(Libro &);
+void mostrarLibros(Libro [], int);
 void mostrarCategorias(Libro [], int);
 void mostrarSubcategorias(Libro [], int, string);
-void mostrarLibros(Libro[], int);
-void buscarLibro(Libro[], int, int, string, string, string, string);
-void leerLibro(Libro &, string, string, int, int, string, string);
-void imprimelibro(Libro &);
-void prestarLibro(Libro[], int, string, string, int);
-void devolverLibro(Libro[], int, string, string, int, int);
+void buscarLibro(Libro [], int, int, string, string, string, string);
+void prestarLibro(Libro [], int, string, string, int);
+bool devolverLibro(Libro [], int , int, int, int);
+int buscarLibroPorID(Libro [], int , int);
+void mostrarLibrosPrestados(Libro libros[], int cantidad);
 
 #endif
